@@ -9,8 +9,19 @@ Bootstrap a PoP project for WordPress
 
 Via Composer
 
-``` bash
+```bash
 $ composer create-project getpop/bootstrap-wp wordpress dev-master
+```
+
+Then add your DB information in `wp-config.php`.
+
+Alternatively, you can already provide the DB information like this:
+
+```bash
+DB_NAME=your_db_name \
+DB_USER=your_db_user \
+DB_PASSWORD=your_db_pwd \
+composer create-project getpop/bootstrap-wp wordpress dev-master
 ```
 
 ## Change log
