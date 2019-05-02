@@ -1,11 +1,11 @@
 {
     "name": "leoloso/pop-bootstrap-wp",
     "type": "project",
-    "description": "Bootstrap a PoP project for WordPress",
+    "description": "Bootstrap WordPress with PoP",
     "keywords": [
         "PoP",
-        "boilerplate",
-        "WordPress"
+        "WordPress",
+        "bootstrap"
     ],
     "homepage": "https://github.com/leoloso/PoPBootstrapWP",
     "license": "MIT",
