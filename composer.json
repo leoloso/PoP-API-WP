@@ -4,7 +4,7 @@
     "description": "Bootstrap a PoP project for WordPress",
     "keywords": [
         "PoP",
-        "Bootstrap",
+        "boilerplate",
         "WordPress"
     ],
     "homepage": "https://github.com/getpop/bootstrap-wp",
@@ -13,8 +13,7 @@
         {
             "name": "Leonardo Losoviz",
             "email": "leo@getpop.org",
-            "homepage": "https://getpop.org",
-            "role": "Developer"
+            "homepage": "https://getpop.org"
         }
     ],
     "repositories": [
@@ -24,16 +23,38 @@
         }
     ],
     "require": {
-        "johnpbloch/wordpress": ">=5.1"
-    },
-    "extra": {
-        "wordpress-install-dir": "wp",
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        }
+        "php": ">=7.1",
+        "composer/installers": "^1.4",
+        "vlucas/phpdotenv": "^3.0.0",
+        "oscarotero/env": "^1.1.0",
+        "roots/wordpress": "5.1.1",
+        "roots/wp-config": "1.0.0",
+        "roots/wp-password-bcrypt": "1.0.0"
     },
     "config": {
-        "vendor-dir": "wp-content/vendor",
-        "sort-packages": true
+        "sort-packages": true,
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "installer-paths": {
+            "web/app/mu-plugins/{$name}/": [
+                "type:wordpress-muplugin"
+            ],
+            "web/app/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "web/app/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
+        },
+        "wordpress-install-dir": "web/wp"
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ]
     }
 }
