@@ -4,7 +4,7 @@
     "description": "Bootstrap a PoP project for WordPress",
     "keywords": [
         "PoP",
-        "Bootstrap",
+        "boilerplate",
         "WordPress"
     ],
     "homepage": "https://github.com/getpop/bootstrap-wp",
@@ -14,7 +14,6 @@
             "name": "Leonardo Losoviz",
             "email": "leo@getpop.org",
             "homepage": "https://getpop.org",
-            "role": "Developer"
         }
     ],
     "repositories": [
