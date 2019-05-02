@@ -1,33 +1,35 @@
-# Bootstrap WordPress
+# Bootstrap WordPress with PoP
 
-Bootstrap a PoP project for WordPress
+Quickly launch a WordPress instance with PoP installed, and containing a bunch of the most popular PoP components.
 
 ## Install
 
-Via Composer
+**1. Download WordPress and all PoP components via Composer**
 
 ```bash
-$ composer create-project leoloso/pop-bootstrap-wp wordpress dev-master
+$ composer create-project leoloso/pop-bootstrap-wp yoursitename dev-master
 ```
 
-Then add your DB information in `wp-config.php`.
+**2. Install the WordPress instance**
 
-Alternatively, you can already provide the DB information like this:
+- [Install the WordPress database](https://wordpress.org/support/article/how-to-install-wordpress/#step-2-create-the-database-and-a-user)
+- [Configure `wp-config.php`](https://wordpress.org/support/article/how-to-install-wordpress/#step-3-set-up-wp-config-php)
+- [Run the install script](https://wordpress.org/support/article/how-to-install-wordpress/#step-5-run-the-install-script)
 
-```bash
-DB_NAME=your_db_name \
-DB_USER=your_db_user \
-DB_PASSWORD=your_db_pwd \
-composer create-project leoloso/pop-bootstrap-wp wordpress dev-master
-```
+**3. Modify the Site Address (URL)**
 
-## Change log
+Log in to the WordPress admin panel and go to Settings => General (`wp-admin/options-general.php`). There, remove the `/wp` bit from the Site Address (URL) input and save.
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+## Installed PoP Components
 
-## Contributing
+This bootstrapper installs the following PoP components:
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) and [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) for details.
+TBD...
+
+<!--
+- [Posts]()
+- [Users]()
+-->
 
 ## Credits
 
