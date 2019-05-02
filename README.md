@@ -1,8 +1,5 @@
 # Bootstrap WordPress
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
-
 Bootstrap a PoP project for WordPress
 
 ## Install
@@ -40,9 +37,4 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CODE_OF_CONDUCT](CODE_OF_CONDUCT
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/leoloso/pop-bootstrap-wp.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-
-[link-packagist]: https://packagist.org/packages/leoloso/pop-bootstrap-wp
-[link-downloads]: https://packagist.org/packages/leoloso/pop-bootstrap-wp
 [link-author]: https://github.com/leoloso
