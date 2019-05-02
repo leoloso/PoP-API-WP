@@ -1,0 +1,28 @@
+{
+    "name": "getpop/bootstrap-wp",
+    "type": "project",
+    "description": "Bootstrap a PoP project for WordPress",
+    "keywords": [
+        "PoP",
+        "Bootstrap",
+        "WordPress"
+    ],
+    "homepage": "https://github.com/getpop/bootstrap-wp",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Leonardo Losoviz",
+            "email": "leo@getpop.org",
+            "homepage": "https://getpop.org",
+            "role": "Developer"
+        }
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
