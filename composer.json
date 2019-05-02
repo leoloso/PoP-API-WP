@@ -34,5 +34,10 @@
     "config": {
         "vendor-dir": "wp-content/vendor",
         "sort-packages": true
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php -r \"\\$fp = fopen('wp-config.php', 'r'); \\$buffer = fread(\\$fp, 120000); fclose(\\$fp); \\$lines = explode('\n', \\$buffer); \\$replaceitems = [['line' => 26, 'from' => 'database_name_here', 'to' => '$DB_NAME'], ['line' => 29, 'from' => 'username_here', 'to' => '$DB_USER'], ['line' => 32, 'from' => 'password_here', 'to' => '$DB_PASSWORD']]; foreach(\\$replaceitems as \\$replaceitem) { if (\\$replaceitem['to']) { \\$lines[\\$replaceitem['line']-1] = str_replace(\\$replaceitem['from'], \\$replaceitem['to'], \\$lines[\\$replaceitem['line']-1]); } } \\$fp = fopen('wp-config.php', 'w'); \\$buffer = implode('\n', \\$lines).'\n'; fwrite(\\$fp, \\$buffer); fclose(\\$fp);\""
+        ]
     }
 }
