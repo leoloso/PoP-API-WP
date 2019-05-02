@@ -10,7 +10,7 @@ Bootstrap a PoP project for WordPress
 Via Composer
 
 ``` bash
-$ composer create-project getpop/bootstrap-wp bootstrap-wp
+$ composer create-project getpop/bootstrap-wp bootstrap-wp -s dev
 ```
 
 ## Change log
