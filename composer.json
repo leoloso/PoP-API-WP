@@ -5,7 +5,10 @@
     "keywords": [
         "PoP",
         "WordPress",
-        "bootstrap"
+        "bootstrap",
+        "components",
+        "component-driven design",
+        "API"
     ],
     "homepage": "https://github.com/leoloso/PoP-Bootstrap-WP",
     "license": "MIT",
