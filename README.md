@@ -7,7 +7,7 @@ Quickly launch a WordPress instance with PoP installed, and containing a bunch o
 **1. Download WordPress and all PoP components via Composer**
 
 ```bash
-$ composer create-project leoloso/pop-bootstrap-wp yoursitename dev-master
+$ composer create-project leoloso/pop-bootstrap-wp yoursitename
 ```
 
 **2. Install the WordPress instance**
