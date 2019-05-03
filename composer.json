@@ -19,6 +19,8 @@
             "homepage": "https://getpop.org"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "repositories": [
         {
             "type": "composer",
