@@ -26,6 +26,7 @@
         }
     ],
     "require": {
+        "php": "~7.1",
         "johnpbloch/wordpress": ">=5.1"
     },
     "extra": {
