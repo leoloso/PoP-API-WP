@@ -31,7 +31,7 @@
         "php": "~7.1",
         "getpop/hooks-wp": "dev-master",
         "getpop/translation-wp": "dev-master",
-        "johnpbloch/wordpress": ">=5.1"
+        "johnpbloch/wordpress": ">=5.2"
     },
     "extra": {
         "wordpress-install-dir": "wp",
