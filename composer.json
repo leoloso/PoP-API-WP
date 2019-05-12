@@ -31,6 +31,7 @@
         "php": "~7.1",
         "getpop/hooks-wp": "dev-master",
         "getpop/translation-wp": "dev-master",
+        "getpop/symfony-cache": "dev-master",
         "johnpbloch/wordpress": ">=5.2"
     },
     "extra": {
