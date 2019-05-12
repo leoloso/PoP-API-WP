@@ -22,14 +22,11 @@ Log in to the WordPress admin panel and go to Settings => General (`wp-admin/opt
 
 ## Installed PoP Components
 
-This bootstrapper installs the following PoP components:
+This bootstrapper installs the following PoP components and their dependencies:
 
-TBD...
-
-<!--
-- [Posts]()
-- [Users]()
--->
+- [Hooks for WordPress](https://github.com/getpop/hooks-wp)
+- [Translation for WordPress](https://github.com/getpop/translation-wp)
+- [Symfony Cache](https://github.com/getpop/cache-symfony)
 
 ## Credits
 
