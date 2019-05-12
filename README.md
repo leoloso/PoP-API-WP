@@ -26,7 +26,7 @@ This bootstrapper installs the following PoP components and their dependencies:
 
 - [Hooks for WordPress](https://github.com/getpop/hooks-wp)
 - [Translation for WordPress](https://github.com/getpop/translation-wp)
-- [Symfony Cache](https://github.com/getpop/cache-symfony)
+- [Engine through Symfony](https://github.com/getpop/engine-symfony)
 
 ## Credits
 
