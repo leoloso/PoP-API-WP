@@ -32,6 +32,7 @@
         "getpop/hooks-wp": "dev-master",
         "getpop/translation-wp": "dev-master",
         "getpop/engine-symfony": "dev-master",
+        "getpop/engine-wp": "dev-master",
         "johnpbloch/wordpress": ">=5.2"
     },
     "extra": {
