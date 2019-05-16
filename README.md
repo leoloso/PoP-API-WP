@@ -28,6 +28,7 @@ This bootstrapper installs the following PoP components and their dependencies:
 - [Translation for WordPress](https://github.com/getpop/translation-wp)
 - [Engine through Symfony](https://github.com/getpop/engine-symfony)
 - [Engine for WordPress](https://github.com/getpop/engine-wp)
+- [Single-Page Application](https://github.com/getpop/spa)
 
 ## Credits
 
