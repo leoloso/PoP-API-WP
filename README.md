@@ -20,6 +20,10 @@ $ composer create-project leoloso/pop-bootstrap-wp yoursitename
 
 Log in to the WordPress admin panel and go to Settings => General (`wp-admin/options-general.php`). There, remove the `/wp` bit from the Site Address (URL) input and save.
 
+### Setting-up environment variables
+
+If needed, create file `config/.env` (and other more specific files, following [Symfony's Dotenv component](https://symfony.com/doc/current/components/dotenv.html)'s instructions) including all required environment variables for the application. These files, containing environment information, must not be saved under version control.
+
 ## Installed PoP Components
 
 This bootstrapper installs the following PoP components and their dependencies:
@@ -29,6 +33,7 @@ This bootstrapper installs the following PoP components and their dependencies:
 - [Engine through Symfony](https://github.com/getpop/engine-symfony)
 - [Engine for WordPress](https://github.com/getpop/engine-wp)
 - [Single-Page Application](https://github.com/getpop/spa)
+- Many more (full list coming soon)
 
 ## Credits
 
