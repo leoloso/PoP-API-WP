@@ -17,20 +17,19 @@ $ composer create-project leoloso/pop-api-wp {YOUR_SITE_NAME}
 
 _For more control:_ The script above can be prepended with environment variables to configure WordPress and set the default application options:
 
-- `ENV`: environment (`"DEV"` or `"PROD"`, default `"DEV"`)
 - `DB_NAME`: WordPress DB name, added to `wp-config.php`
 - `DB_USER`: WordPress DB user, added to `wp-config.php`
 - `DB_PASSWORD`: WordPress DB password, added to `wp-config.php`
 - `GENERATE_SALTS`: Generate random salts, added to `wp-config.php` (`true` or `false`, default `false`) 
+- `ENV`: environment (`"DEV"` or `"PROD"`, default `"DEV"`)
 
 Example: 
 
 ```bash
-$ ENV=DEV \
-DB_NAME={YOUR_DB_NAME} \
+$ DB_NAME={YOUR_DB_NAME} \
 DB_USER={YOUR_DB_USER} \
 DB_PASSWORD={YOUR_DB_PASSWORD} \
-GENERATE_SALTS=false \
+GENERATE_SALTS=true \
 composer create-project leoloso/pop-api-wp {YOUR_SITE_NAME}
 ```
 
