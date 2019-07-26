@@ -45,6 +45,29 @@ This bootstrapper will install the WordPress version of the following PoP compon
 - [Comments](https://github.com/getpop/comments)
 - [Pages](https://github.com/getpop/pages)
 
+## Usage
+
+The API is accessed through the following endpoints:
+
+**REST:**
+
+- List of posts: `/posts/?action=api&datastructure=rest`
+- Single post: `/{SINGLE-POST-URL}/?action=api&datastructure=rest`
+- List of users: `/users/?action=api&datastructure=rest`
+- Author: `/{AUTHOR-URL}/?action=api&datastructure=rest`
+- List of tags: `/tags/?action=api&datastructure=rest`
+- Tag: `/{TAG-URL}/?action=api&datastructure=rest`
+- Page: `/{PAGE-URL}/?action=api&datastructure=rest`
+
+**GraphQL:**
+
+Add parameter `fields` to the endpoint URL. Some examples:
+
+- Posts: `/posts/?action=api&datastructure=graphql&fields=id|title|date|url,author.id|name|url,tags.id|slug|count|url,comments.id|content|date`
+- Users: `/users/?action=api&datastructure=graphql&fields=id|name|url,posts.id|title|url|date,posts.tags.id|slug|count|url,posts.comments.id|content|date`
+- Tags: `/tags/?action=api&datastructure=graphql&fields=id|slug|count|url,posts.id|title|url|date,posts.author.id|name|url`
+- Page: `/{PAGE-URL}/?action=api&datastructure=graphql&fields=id|title|url`
+
 ## Credits
 
 - [Leonardo Losoviz][link-author]
