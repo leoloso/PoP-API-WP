@@ -21,7 +21,7 @@ The script above sets the application options for the `DEV` environment. To set 
 $ ENV=PROD composer create-project leoloso/pop-api-wp yoursitename
 ```
 
-**2. Install the WordPress instance**
+**2. Install WordPress**
 
 - [Install the WordPress database](https://wordpress.org/support/article/how-to-install-wordpress/#step-2-create-the-database-and-a-user)
 - [Configure `wp-config.php`](https://wordpress.org/support/article/how-to-install-wordpress/#step-3-set-up-wp-config-php)
@@ -31,7 +31,7 @@ $ ENV=PROD composer create-project leoloso/pop-api-wp yoursitename
 
 Log in to the WordPress admin panel and go to Settings => General (`wp-admin/options-general.php`). There, remove the `/wp` bit from the Site Address (URL) input and save.
 
-**4. Set-up application options**
+**4. Set-up application options (optional)**
 
 Upon installation, the Composer script will create file `config/.env` including default values for application options (passed as environment variables). You can further edit this file, or even create more specific ones (following [Symfony's Dotenv component](https://symfony.com/doc/current/components/dotenv.html)'s file hierarchy).
 
