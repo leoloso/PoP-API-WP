@@ -15,12 +15,18 @@ Coming soon...
 $ composer create-project leoloso/pop-api-wp {YOUR_SITE_NAME} dev-master
 ```
 
-_For more control:_ The script above can be prepended with environment variables to configure WordPress and set the default application options:
+_For more control:_ The script above can be prepended with environment variables to configure WordPress and set the default application options.
 
-- `DB_NAME`: WordPress DB name, added to `wp-config.php`
-- `DB_USER`: WordPress DB user, added to `wp-config.php`
-- `DB_PASSWORD`: WordPress DB password, added to `wp-config.php`
-- `GENERATE_SALTS`: Generate random salts, added to `wp-config.php` (`true` or `false`, default `false`) 
+WordPress configuration (added to `wp-config.php`):
+
+- `DB_NAME`: WordPress DB name
+- `DB_USER`: WordPress DB user
+- `DB_PASSWORD`: WordPress DB password
+- `DB_HOST`: WordPress DB host
+- `GENERATE_SALTS`: Generate random salts (`true` or `false`, default `false`)
+
+Application options:
+
 - `ENV`: environment (`"DEV"` or `"PROD"`, default `"DEV"`)
 
 Example: 
@@ -29,6 +35,7 @@ Example:
 $ DB_NAME={YOUR_DB_NAME} \
 DB_USER={YOUR_DB_USER} \
 DB_PASSWORD={YOUR_DB_PASSWORD} \
+DB_HOST={YOUR_DB_HOST} \
 GENERATE_SALTS=true \
 composer create-project leoloso/pop-api-wp {YOUR_SITE_NAME} dev-master
 ```
