@@ -12,7 +12,7 @@ Coming soon...
 **1. Download PoP and WordPress via Composer**
 
 ```bash
-$ composer create-project leoloso/pop-api-wp {YOUR_SITE_NAME}
+$ composer create-project leoloso/pop-api-wp {YOUR_SITE_NAME} dev-master
 ```
 
 _For more control:_ The script above can be prepended with environment variables to configure WordPress and set the default application options:
@@ -30,7 +30,7 @@ $ DB_NAME={YOUR_DB_NAME} \
 DB_USER={YOUR_DB_USER} \
 DB_PASSWORD={YOUR_DB_PASSWORD} \
 GENERATE_SALTS=true \
-composer create-project leoloso/pop-api-wp {YOUR_SITE_NAME}
+composer create-project leoloso/pop-api-wp {YOUR_SITE_NAME} dev-master
 ```
 
 **2. Install WordPress**
