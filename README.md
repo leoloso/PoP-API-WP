@@ -50,7 +50,6 @@ wp core install --url=$SITE_URL_WITHOUT_HTTP --title="$SITE_NAME" --admin_user=$
 
 # Update the site URL, adding "/wp"
 wp option update siteurl $SITE_URL_WITH_HTTP/wp
-
 ```
 4. Wait for a few minutes ☕️😁
 5. Test if successful:
@@ -58,6 +57,9 @@ wp option update siteurl $SITE_URL_WITH_HTTP/wp
     - WordPress admin under {YOUR_SITE_URL_WITH_HTTP}/wp
     - PoP API under {YOUR_SITE_URL_WITH_HTTP}/posts/?action=api&datastructure=rest
 
+### Configure application options (optional)
+
+Upon installation, the Composer script will create file `config/.env` including default values for application options (passed as environment variables). You can further edit this file, or even create more specific ones (following [Symfony's Dotenv component](https://symfony.com/doc/current/components/dotenv.html)'s file hierarchy).
 
 <!--
 2. Execute the bash script below, replacing all variables values (such as `{YOUR_SITE_FOLDER_NAME}`) with your own values:
