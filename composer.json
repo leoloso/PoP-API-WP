@@ -1,7 +1,7 @@
 {
-    "name": "leoloso/pop-bootstrap-wp",
+    "name": "leoloso/pop-api-wp",
     "type": "project",
-    "description": "Bootstrap WordPress with PoP",
+    "description": "Bootstrap a PoP API for WordPress",
     "keywords": [
         "PoP",
         "WordPress",
@@ -10,7 +10,7 @@
         "component-driven design",
         "API"
     ],
-    "homepage": "https://github.com/leoloso/pop-bootstrap-wp",
+    "homepage": "https://github.com/leoloso/pop-api-wp",
     "license": "MIT",
     "authors": [
         {

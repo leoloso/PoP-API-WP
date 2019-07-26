@@ -1,4 +1,4 @@
-# Bootstrap WordPress with PoP
+# Bootstrap a PoP API for WordPress
 
 Quickly launch a WordPress instance with PoP installed, and containing a bunch of the most popular PoP components.
 
@@ -7,7 +7,7 @@ Quickly launch a WordPress instance with PoP installed, and containing a bunch o
 **1. Download WordPress and all PoP components via Composer**
 
 ```bash
-$ composer create-project leoloso/pop-bootstrap-wp yoursitename
+$ composer create-project leoloso/pop-api-wp yoursitename
 ```
 
 **2. Install the WordPress instance**
