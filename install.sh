@@ -15,7 +15,7 @@ wp config set DB_HOST $DB_HOST #eg: 127.0.0.1
 wp config shuffle-salts
 
 # Install WordPress: (reference: https://developer.wordpress.org/cli/commands/core/install/)
-wp core install --url=$SITE_URL_WITHOUT_HTTP --title="$NAME" --admin_user=$ADMIN_USER --admin_password=$ADMIN_PASSWORD --admin_email=$ADMIN_EMAIL
+wp core install --url=$SITE_URL_WITHOUT_HTTP --title="$SITE_NAME" --admin_user=$ADMIN_USER --admin_password=$ADMIN_PASSWORD --admin_email=$ADMIN_EMAIL
 #eg: wp core install --url=localhost --title="My awesome website" --admin_user=admin --admin_password=JKo$@sfjASD00w --admin_email=pedro@example.com
 
 # Update the site URL, adding "/wp"
