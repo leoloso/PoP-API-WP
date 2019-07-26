@@ -37,7 +37,7 @@ Upon installation, the Composer script will create file `config/.env` including 
 -->
 ## Installed Components
 
-This bootstrapper will install the WordPress version of the following PoP components:
+This bootstrapper will install the following components (for WordPress):
 
 - [Posts](https://github.com/getpop/posts)
 - [Users](https://github.com/getpop/users)
@@ -61,7 +61,7 @@ The API is accessed through the following endpoints:
 
 **GraphQL-compatible:**
 
-Add parameter `fields` to the endpoint URL. Some examples:
+Add parameter `fields` to the endpoint URL (using a [custom dot notation](https://github.com/leoloso/PoP#how-does-it-work)). Some examples:
 
 - Posts (or single post): `/posts/?action=api&datastructure=graphql&fields=id|title|date|url|cat-slugs,author.id|name|url,tags.id|slug|count|url,comments.id|content|date`
 - Users (or author): `/users/?action=api&datastructure=graphql&fields=id|name|url,posts.id|title|url|date,posts.tags.id|slug|count|url,posts.comments.id|content|date`
