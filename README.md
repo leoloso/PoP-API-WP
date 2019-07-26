@@ -7,13 +7,10 @@ Quickly launch a WordPress instance with the PoP API (REST and GraphQL-compatibl
 Via [Composer](https://getcomposer.org) and [WP-CLI](https://wp-cli.org/):
 
 1. Create the [WordPress database and user](https://wordpress.org/support/article/how-to-install-wordpress/#step-2-create-the-database-and-a-user)
-2. In the terminal, step on the folder where to install the site
-3. Execute the bash script below, replacing all variables values (such as `{YOUR_SITE_FOLDER_NAME}`) with your own values:
+2. In the terminal, `cd` to the folder where to install the site
+3. Copy the code below to an editor, replace all values (such as `{YOUR_SITE_FOLDER_NAME}`) with your own values, and then paste it on the terminal to execute:
 
 ```bash
-###################################
-# Replace these values
-###################################
 export FOLDER_NAME={YOUR_SITE_FOLDER_NAME} #eg: root
 export DB_NAME={YOUR_SITE_DB_NAME} #eg: database
 export DB_USER={YOUR_SITE_DB_USER} #eg: admin
@@ -25,10 +22,23 @@ export SITE_NAME="{YOUR_SITE_NAME}" #eg: "My awesome website"
 export ADMIN_USER={ADMIN_USER} #eg: admin
 export ADMIN_PASSWORD={ADMIN_PASSWORD} #eg: JKo$@sfjASD00w
 export ADMIN_EMAIL={ADMIN_EMAIL} #eg: pedro@example.com
+```
 
-###################################
-# Execute script
-###################################
+4. Execute script:
+
+```bash
+wget -O - https://raw.githubusercontent.com/leoloso/pop-api-wp/master/install.sh | bash
+```
+
+5. Wait for a few minutes ☕️😁
+6. Test if successful:
+    - WordPress site under {YOUR_SITE_URL_WITH_HTTP}
+    - WordPress admin under {YOUR_SITE_URL_WITH_HTTP}/wp
+    - PoP API under {YOUR_SITE_URL_WITH_HTTP}/posts/?action=api&datastructure=rest
+
+<!--
+```bash
+
 # Install PoP and WordPress through Composer:
 composer create-project leoloso/pop-api-wp $FOLDER_NAME dev-master
 
@@ -51,12 +61,7 @@ wp core install --url=$SITE_URL_WITHOUT_HTTP --title="$SITE_NAME" --admin_user=$
 # Update the site URL, adding "/wp"
 wp option update siteurl $SITE_URL_WITH_HTTP/wp
 ```
-4. Wait for a few minutes ☕️😁
-5. Test if successful:
-    - WordPress site under {YOUR_SITE_URL_WITH_HTTP}
-    - WordPress admin under {YOUR_SITE_URL_WITH_HTTP}/wp
-    - PoP API under {YOUR_SITE_URL_WITH_HTTP}/posts/?action=api&datastructure=rest
-
+-->
 ### Configure application options (optional)
 
 Upon installation, the Composer script will create file `config/.env` including default values for application options (passed as environment variables). You can further edit this file, or even create more specific ones (following [Symfony's Dotenv component](https://symfony.com/doc/current/components/dotenv.html)'s file hierarchy).
