@@ -49,7 +49,7 @@ This bootstrapper will install the WordPress version of the following PoP compon
 
 The API is accessed through the following endpoints:
 
-**REST:**
+**REST-compatible:**
 
 - List of posts: `/posts/?action=api&datastructure=rest`
 - Single post: `/{SINGLE-POST-URL}/?action=api&datastructure=rest`
@@ -59,14 +59,21 @@ The API is accessed through the following endpoints:
 - Tag: `/{TAG-URL}/?action=api&datastructure=rest`
 - Page: `/{PAGE-URL}/?action=api&datastructure=rest`
 
-**GraphQL:**
+**GraphQL-compatible:**
 
 Add parameter `fields` to the endpoint URL. Some examples:
 
-- Posts: `/posts/?action=api&datastructure=graphql&fields=id|title|date|url|cat-slugs,author.id|name|url,tags.id|slug|count|url,comments.id|content|date`
-- Users: `/users/?action=api&datastructure=graphql&fields=id|name|url,posts.id|title|url|date,posts.tags.id|slug|count|url,posts.comments.id|content|date`
-- Tags: `/tags/?action=api&datastructure=graphql&fields=id|slug|count|url,posts.id|title|url|date,posts.author.id|name|url`
+- Posts (or single post): `/posts/?action=api&datastructure=graphql&fields=id|title|date|url|cat-slugs,author.id|name|url,tags.id|slug|count|url,comments.id|content|date`
+- Users (or author): `/users/?action=api&datastructure=graphql&fields=id|name|url,posts.id|title|url|date,posts.tags.id|slug|count|url,posts.comments.id|content|date`
+- Tags (or tag): `/tags/?action=api&datastructure=graphql&fields=id|slug|count|url,posts(orderby:title;order:asc).id|title|url|date`
 - Page: `/{PAGE-URL}/?action=api&datastructure=graphql&fields=id|title|url`
+
+**PoP native:**
+
+- Posts (or single post): `/posts/?action=api&fields=id|title|date|url|cat-slugs,author.id|name|url,tags.id|slug|count|url,comments.id|content|date`
+- Users (or author): `/users/?action=api&fields=id|name|url,posts.id|title|url|date,posts.tags.id|slug|count|url,posts.comments.id|content|date`
+- Tags (or tag): `/tags/?action=api&fields=id|slug|count|url,posts(orderby:title;order:asc).id|title|url|date`
+- Page: `/{PAGE-URL}/?action=api&fields=id|title|url`
 
 ## Credits
 
