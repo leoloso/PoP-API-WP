@@ -20,4 +20,4 @@ wp core install --url=$SITE_URL_WITHOUT_HTTP --title="$SITE_NAME" --admin_user=$
 
 # Update the site URL, adding "/wp"
 wp option update siteurl $SITE_URL_WITH_HTTP/wp
-# eg: wp option update siteurl 'http://popappwp.localhost:8888/wp'
+# eg: wp option update siteurl 'http://localhost/wp'
