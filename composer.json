@@ -29,8 +29,6 @@
     ],
     "require": {
         "php": "~7.1",
-        "getpop/hooks-wp": "dev-master",
-        "getpop/translation-wp": "dev-master",
         "getpop/engine-symfony": "dev-master",
         "getpop/engine-wp": "dev-master",
         "getpop/spa": "dev-master",
@@ -45,7 +43,6 @@
         "getpop/postmeta-wp": "dev-master",
         "getpop/posts-wp": "dev-master",
         "getpop/queriedobject-wp": "dev-master",
-        "getpop/routing-wp": "dev-master",
         "getpop/taxonomies-wp": "dev-master",
         "getpop/taxonomymeta-wp": "dev-master",
         "getpop/taxonomyquery-wp": "dev-master",
