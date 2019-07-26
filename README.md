@@ -4,11 +4,38 @@ Quickly launch a WordPress instance with the PoP API (REST and GraphQL-compatibl
 
 ## Install
 
-<!--
-Coming soon...
+Via [Composer](https://getcomposer.org) and [WP-CLI](https://wp-cli.org/) (replace variables, such as `$YOUR_SITE_FOLDER_NAME`, with your own values):
 
-### Manual installation
--->
+1. Create the [WordPress database and user](https://wordpress.org/support/article/how-to-install-wordpress/#step-2-create-the-database-and-a-user)
+2. Execute bash script:
+
+```bash
+# Install PoP and WordPress through Composer:
+composer create-project leoloso/pop-api-wp $YOUR_SITE_FOLDER_NAME dev-master
+
+# Install the must-use plugins:
+cd $YOUR_SITE_FOLDER_NAME
+composer install
+
+# Configure wp-config.php through WP-CLI: (reference: https://developer.wordpress.org/cli/commands/config/set/)
+wp config set DB_NAME $YOUR_SITE_DB_NAME #eg: database
+wp config set DB_USER $YOUR_SITE_DB_USER #eg: admin
+wp config set DB_PASSWORD $YOUR_SITE_DB_PASSWORD #eg: sADF!kl9diq@#Sjfk
+wp config set DB_HOST $YOUR_SITE_DB_HOST #eg: 127.0.0.1
+
+# Generate random SALT keys through WP-CLI: (reference: https://developer.wordpress.org/cli/commands/config/shuffle-salts/)
+wp config shuffle-salts
+
+# Install WordPress: (reference: https://developer.wordpress.org/cli/commands/core/install/)
+wp core install --url=$YOUR_SITE_URL_WITHOUT_HTTP --title=$YOUR_SITE_NAME --admin_user=$ADMIN_USER --admin_password=$ADMIN_PASSWORD --admin_email=$ADMIN_EMAIL
+#eg: wp core install --url=localhost --title="My awesome website" --admin_user=admin --admin_password=JKo$@sfjASD00w --admin_email=pedro@example.com
+
+# Update the site URL, adding "/wp"
+wp option update siteurl '$YOUR_SITE_URL_WITH_HTTP/wp'
+# eg: wp option update siteurl 'http://popappwp.localhost:8888/wp'
+```
+
+<!--
 **1. Download PoP and WordPress via Composer**
 
 ```bash
@@ -53,7 +80,7 @@ Log in to the WordPress admin panel and go to Settings => General (`wp-admin/opt
 **4. Set-up application options (optional)**
 
 Upon installation, the Composer script will create file `config/.env` including default values for application options (passed as environment variables). You can further edit this file, or even create more specific ones (following [Symfony's Dotenv component](https://symfony.com/doc/current/components/dotenv.html)'s file hierarchy).
-
+-->
 ## Installed Components
 
 This bootstrapper will install the following components (for WordPress):
