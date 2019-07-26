@@ -1,6 +1,6 @@
 # Bootstrap a PoP API for WordPress
 
-Quickly launch a WordPress instance with PoP installed, and containing a bunch of the most popular PoP components.
+Quickly launch a WordPress instance with the PoP API (REST and GraphQL-compatible) installed.
 
 ## Install
 
@@ -24,16 +24,15 @@ Log in to the WordPress admin panel and go to Settings => General (`wp-admin/opt
 
 If needed, create file `config/.env` (and other more specific files, following [Symfony's Dotenv component](https://symfony.com/doc/current/components/dotenv.html)'s instructions) including all required environment variables for the application. These files, containing environment information, must not be saved under version control.
 
-## Installed PoP Components
+## Installed Components
 
-This bootstrapper installs the following PoP components and their dependencies:
+This bootstrapper the WordPress version of the following PoP components:
 
-- [Hooks for WordPress](https://github.com/getpop/hooks-wp)
-- [Translation for WordPress](https://github.com/getpop/translation-wp)
-- [Engine through Symfony](https://github.com/getpop/engine-symfony)
-- [Engine for WordPress](https://github.com/getpop/engine-wp)
-- [Single-Page Application](https://github.com/getpop/spa)
-- Many more (full list coming soon)
+- [Posts](https://github.com/getpop/posts)
+- [Users](https://github.com/getpop/users)
+- [Taxonomies](https://github.com/getpop/taxonomies) (tags and categories)
+- [Comments](https://github.com/getpop/comments)
+- [Pages](https://github.com/getpop/pages)
 
 ## Credits
 
