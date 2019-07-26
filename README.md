@@ -4,34 +4,49 @@ Quickly launch a WordPress instance with the PoP API (REST and GraphQL-compatibl
 
 ## Install
 
-Via [Composer](https://getcomposer.org) and [WP-CLI](https://wp-cli.org/) (replace variables, such as `$YOUR_SITE_FOLDER_NAME`, with your own values):
+Via [Composer](https://getcomposer.org) and [WP-CLI](https://wp-cli.org/):
 
 1. Create the [WordPress database and user](https://wordpress.org/support/article/how-to-install-wordpress/#step-2-create-the-database-and-a-user)
-2. Execute bash script:
+2. Execute the bash script below, replacing all variables values (such as `{YOUR_SITE_FOLDER_NAME}`) with your own values:
 
 ```bash
-# Install PoP and WordPress through Composer:
-composer create-project leoloso/pop-api-wp $YOUR_SITE_FOLDER_NAME dev-master
+FOLDER_NAME={YOUR_SITE_FOLDER_NAME} \
+DB_NAME={YOUR_SITE_DB_NAME} \
+DB_USER={YOUR_SITE_DB_USER} \
+DB_PASSWORD={YOUR_SITE_DB_PASSWORD} \
+DB_HOST={YOUR_SITE_DB_HOST} \
+SITE_URL_WITHOUT_HTTP={YOUR_SITE_URL_WITHOUT_HTTP} \
+SITE_URL_WITH_HTTP={YOUR_SITE_URL_WITH_HTTP} \
+SITE_NAME="{YOUR_SITE_NAME}" \
+ADMIN_USER={ADMIN_USER} \
+ADMIN_PASSWORD={ADMIN_PASSWORD} \
+ADMIN_EMAIL={ADMIN_EMAIL} \
+wget -O - https://raw.githubusercontent.com/leoloso/pop-api-wp/master/install.sh | bash
+```
 
-# Install the must-use plugins:
-cd $YOUR_SITE_FOLDER_NAME
+```bash
+echo # Install PoP and WordPress through Composer:
+composer create-project leoloso/pop-api-wp $FOLDER_NAME dev-master
+
+echo # Install the must-use plugins:
+cd $FOLDER_NAME
 composer install
 
-# Configure wp-config.php through WP-CLI: (reference: https://developer.wordpress.org/cli/commands/config/set/)
-wp config set DB_NAME $YOUR_SITE_DB_NAME #eg: database
-wp config set DB_USER $YOUR_SITE_DB_USER #eg: admin
-wp config set DB_PASSWORD $YOUR_SITE_DB_PASSWORD #eg: sADF!kl9diq@#Sjfk
-wp config set DB_HOST $YOUR_SITE_DB_HOST #eg: 127.0.0.1
+echo # Configure wp-config.php through WP-CLI: (reference: https://developer.wordpress.org/cli/commands/config/set/)
+wp config set DB_NAME $DB_NAME #eg: database
+wp config set DB_USER $DB_USER #eg: admin
+wp config set DB_PASSWORD $DB_PASSWORD #eg: sADF!kl9diq@#Sjfk
+wp config set DB_HOST $DB_HOST #eg: 127.0.0.1
 
-# Generate random SALT keys through WP-CLI: (reference: https://developer.wordpress.org/cli/commands/config/shuffle-salts/)
+echo # Generate random SALT keys through WP-CLI: (reference: https://developer.wordpress.org/cli/commands/config/shuffle-salts/)
 wp config shuffle-salts
 
-# Install WordPress: (reference: https://developer.wordpress.org/cli/commands/core/install/)
-wp core install --url=$YOUR_SITE_URL_WITHOUT_HTTP --title=$YOUR_SITE_NAME --admin_user=$ADMIN_USER --admin_password=$ADMIN_PASSWORD --admin_email=$ADMIN_EMAIL
+echo # Install WordPress: (reference: https://developer.wordpress.org/cli/commands/core/install/)
+wp core install --url=$SITE_URL_WITHOUT_HTTP --title="$NAME" --admin_user=$ADMIN_USER --admin_password=$ADMIN_PASSWORD --admin_email=$ADMIN_EMAIL
 #eg: wp core install --url=localhost --title="My awesome website" --admin_user=admin --admin_password=JKo$@sfjASD00w --admin_email=pedro@example.com
 
-# Update the site URL, adding "/wp"
-wp option update siteurl '$YOUR_SITE_URL_WITH_HTTP/wp'
+echo # Update the site URL, adding "/wp"
+wp option update siteurl '$SITE_URL_WITH_HTTP/wp'
 # eg: wp option update siteurl 'http://popappwp.localhost:8888/wp'
 ```
 
