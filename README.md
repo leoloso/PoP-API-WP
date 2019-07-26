@@ -47,33 +47,35 @@ This bootstrapper will install the following components (for WordPress):
 
 ## Usage
 
-The API is accessed through the following endpoints:
+The API is accessed through the following endpoints (click on them to see an example):
 
 **REST-compatible:**
 
-- List of posts: `/posts/?action=api&datastructure=rest`
-- Single post: `/{SINGLE-POST-URL}/?action=api&datastructure=rest`
-- List of users: `/users/?action=api&datastructure=rest`
-- Author: `/{AUTHOR-URL}/?action=api&datastructure=rest`
-- List of tags: `/tags/?action=api&datastructure=rest`
-- Tag: `/{TAG-URL}/?action=api&datastructure=rest`
-- Page: `/{PAGE-URL}/?action=api&datastructure=rest`
+Add parameters `action=api&datastructure=rest` to the endpoint URL:
+
+- List of posts:<br/>[/posts/?action=api&datastructure=rest](https://nextapi.getpop.org/posts/?action=api&datastructure=rest)
+- Single post:<br/>[/{SINGLE-POST-URL}/?action=api&datastructure=rest](https://nextapi.getpop.org/2013/01/11/markup-html-tags-and-formatting/?action=api&datastructure=rest)
+- List of users:<br/>[/users/?action=api&datastructure=rest](https://nextapi.getpop.org/users/?action=api&datastructure=rest)
+- Author:<br/>[/{AUTHOR-URL}/?action=api&datastructure=rest](https://nextapi.getpop.org/author/themedemos/?action=api&datastructure=rest)
+- List of tags:<br/>[/tags/?action=api&datastructure=rest](https://nextapi.getpop.org/tags/?action=api&datastructure=rest)
+- Tag:<br/>[/{TAG-URL}/?action=api&datastructure=rest](https://nextapi.getpop.org/tag/html?action=api&datastructure=rest)
+- Page:<br/>[/{PAGE-URL}/?action=api&datastructure=rest](https://nextapi.getpop.org/about/?action=api&datastructure=rest)
 
 **GraphQL-compatible:**
 
-Add parameter `fields` to the endpoint URL (using a [custom dot notation](https://github.com/leoloso/PoP#how-does-it-work)). Some examples:
+Add parameters `action=api&datastructure=graphql` to the endpoint URL, and parameter `fields` with the data fields to retrieve (using a [custom dot notation](https://github.com/leoloso/PoP#how-does-it-work)). Examples:
 
-- Posts (or single post): `/posts/?action=api&datastructure=graphql&fields=id|title|date|url|cat-slugs,author.id|name|url,tags.id|slug|count|url,comments.id|content|date`
-- Users (or author): `/users/?action=api&datastructure=graphql&fields=id|name|url,posts.id|title|url|date,posts.tags.id|slug|count|url,posts.comments.id|content|date`
-- Tags (or tag): `/tags/?action=api&datastructure=graphql&fields=id|slug|count|url,posts(orderby:title;order:asc).id|title|url|date`
-- Page: `/{PAGE-URL}/?action=api&datastructure=graphql&fields=id|title|url`
+- List of posts (+ author data):<br/>[/posts/?action=api&datastructure=graphql&fields=id|title|date|url,author.id|name|url,author.posts.id|title|url](https://nextapi.getpop.org/posts/?action=api&datastructure=graphql&fields=id|title|date|url,author.id|name|url,author.posts.id|title|url)
+- Single post (+ tags and comments):<br/>[/{SINGLE-POST-URL}/?action=api&datastructure=graphql&fields=id|title|cat-slugs,tags.id|slug|count|url,comments.id|content|date,comments.author.id|name|url](https://nextapi.getpop.org/2013/01/11/markup-html-tags-and-formatting/?action=api&datastructure=graphql&fields=id|title|cat-slugs,tags.id|slug|count|url,comments.id|content|date,comments.author.id|name|url)
+- List of users (+ up to 2 posts for each):<br/>[/users/?action=api&datastructure=graphql&fields=id|name|url,posts(limit:2).id|title|url|date](https://nextapi.getpop.org/users/?action=api&datastructure=graphql&fields=id|name|url,posts(limit:2).id|title|url|date)
+- Author (+ all posts, with their tags and comments):<br/>[/{AUTHOR-URL}/?action=api&datastructure=graphql&fields=id|name|url,posts.id|title,posts.tags.id|slug|count|url,posts.comments.id|content|date](https://nextapi.getpop.org/author/themedemos/?action=api&datastructure=graphql&fields=id|name|url,posts.id|title,posts.tags.id|slug|count|url,posts.comments.id|content|date)
+- List of tags (+ all their posts ordered by title, their comments, and the comment authors):<br/>[/tags/?action=api&datastructure=graphql&fields=id|slug|count|url,posts(orderby:title;order:asc).id|title|url|date](https://nextapi.getpop.org/tags/?action=api&datastructure=graphql&fields=id|slug|count|url,posts(orderby:title;order:asc).id|title|url|date)
+- Tag (+ all their posts, their comments and the comment authors):<br/>[/tags/?action=api&datastructure=graphql&fields=id|slug|count|url,posts.id|title,posts.comments.content|date,posts.comments.author.id|name|url](https://nextapi.getpop.org/tag/html/?action=api&datastructure=graphql&fields=id|slug|count|url,posts.id|title,posts.comments.content|date,posts.comments.author.id|name|url)
+- Page:<br/>[/{PAGE-URL}/?action=api&datastructure=graphql&fields=id|title|url](https://nextapi.getpop.org/about/?action=api&datastructure=graphql&fields=id|title|url)
 
 **PoP native:**
 
-- Posts (or single post): `/posts/?action=api&fields=id|title|date|url|cat-slugs,author.id|name|url,tags.id|slug|count|url,comments.id|content|date`
-- Users (or author): `/users/?action=api&fields=id|name|url,posts.id|title|url|date,posts.tags.id|slug|count|url,posts.comments.id|content|date`
-- Tags (or tag): `/tags/?action=api&fields=id|slug|count|url,posts(orderby:title;order:asc).id|title|url|date`
-- Page: `/{PAGE-URL}/?action=api&fields=id|title|url`
+Add parameters `action=api` to the endpoint URL, and parameter `fields` similar to the examples above for GraphQL.
 
 ## Credits
 
