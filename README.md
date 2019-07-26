@@ -4,11 +4,11 @@ Quickly launch a WordPress instance with the PoP API (REST and GraphQL-compatibl
 
 ## Install
 
+<!--
 Coming soon...
 
-<!--
 ### Manual installation
-
+-->
 **1. Download WordPress and all PoP components via Composer**
 
 ```bash
@@ -34,7 +34,7 @@ Log in to the WordPress admin panel and go to Settings => General (`wp-admin/opt
 **4. Set-up application options**
 
 Upon installation, the Composer script will create file `config/.env` including default values for application options (passed as environment variables). You can further edit this file, or even create more specific ones (following [Symfony's Dotenv component](https://symfony.com/doc/current/components/dotenv.html)'s file hierarchy).
--->
+
 ## Installed Components
 
 This bootstrapper will install the following components (for WordPress):
