@@ -1,8 +1,7 @@
 #!/bin/bash
-# Output all commands
-set -x
 
 # Install PoP and WordPress through Composer:
+echo "Downloading and installing PoP and WordPress through Composer... (this may take a few minutes)"
 composer create-project leoloso/pop-api-wp $FOLDER_NAME dev-master
 
 # Install the must-use plugins:
@@ -10,9 +9,11 @@ cd $FOLDER_NAME
 composer install
 
 ## Check if WordPress is installed. If not, install it
+echo "Checking if WordPress is installed: "
 if ! $(wp core is-installed); then
 
-    echo Installing WordPress
+    echo "WordPress is not installed yet"
+    echo "Installing WordPress through WP-CLI..."
     
     # Configure wp-config.php through WP-CLI: (reference: https://developer.wordpress.org/cli/commands/config/set/)
     wp config set DB_NAME $DB_NAME #eg: database
@@ -28,4 +29,18 @@ if ! $(wp core is-installed); then
 
     # Update the site URL, adding "/wp"
     wp option update siteurl $SITE_URL_WITH_HTTP/wp
+else
+    echo "WordPress is already installed!"
 fi
+
+echo
+echo "All should be set now! Please check that these URLs work fine:"
+echo "############################################"
+echo "# WordPress site: $SITE_URL_WITH_HTTP"
+echo "# WordPress admin: $SITE_URL_WITH_HTTP/wp/wp-admin/"
+echo "# PoP API (REST for posts): $SITE_URL_WITH_HTTP/posts/?action=api&datastructure=rest"
+echo "############################################"
+echo
+echo "If you like PoP, please don't forget to give us a star in GitHub 😀❤️"
+echo "https://github.com/leoloso/PoP"
+echo "Bye 👋, happy using PoP!"
