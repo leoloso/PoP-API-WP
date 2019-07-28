@@ -1,3 +1,4 @@
+#!/bin/bash
 # Install PoP and WordPress through Composer:
 composer create-project leoloso/pop-api-wp $FOLDER_NAME dev-master
 
