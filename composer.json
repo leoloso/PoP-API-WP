@@ -65,7 +65,7 @@
     },
     "scripts": {
         "post-root-package-install": [
-            "php -r \"include \\$_SERVER['PWD'].'/install/scripts/create-dotenv-file.php';\""
+            "php 'install/scripts/create-dotenv-file.php'"
         ]
     }
 }
