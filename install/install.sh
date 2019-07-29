@@ -6,6 +6,8 @@ GREEN='\033[0;32m'
 ORANGE='\033[0;33m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
+UNDERLINE=`tput smul`
+NOUNDERLINE=`tput rmul`
 
 # Install PoP and WordPress through Composer:
 echo "Downloading and installing PoP and WordPress through Composer..."
@@ -52,12 +54,12 @@ fi
 echo
 echo -e "✅ ${GREEN}Installation successful!${NC} Please check that the following URLs work fine:"
 echo "############################################"
-echo -e "🍎 WordPress site: ${ORANGE}$SITE_URL_WITH_HTTP${NC}"
-echo -e "🍎 WordPress admin: ${ORANGE}$SITE_URL_WITH_HTTP/wp/wp-admin/${NC}"
-echo -e "🍎 PoP API (REST for posts): ${ORANGE}$SITE_URL_WITH_HTTP/posts/?action=api&datastructure=rest${NC}"
+echo -e "🍎 WordPress site: ${ORANGE}${UNDERLINE}$SITE_URL_WITH_HTTP${NOUNDERLINE}${NC}"
+echo -e "🍎 WordPress admin: ${ORANGE}${UNDERLINE}$SITE_URL_WITH_HTTP/wp/wp-admin/${NOUNDERLINE}${NC}"
+echo -e "🍎 PoP API (REST for posts): ${ORANGE}${UNDERLINE}$SITE_URL_WITH_HTTP/posts/?action=api&datastructure=rest${NOUNDERLINE}${NC}"
 echo "############################################"
 echo
 echo "If you like PoP, please consider giving the project a star in GitHub 😀 ❤️"
-echo -e "👉🏽 ${ORANGE}https://github.com/leoloso/PoP${NC}"
+echo -e "👉🏽 ${ORANGE}${UNDERLINE}https://github.com/leoloso/PoP${NOUNDERLINE}${NC}"
 echo "Bye 👋 , happy using PoP!"
 exit 0;
