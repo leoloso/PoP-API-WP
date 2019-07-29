@@ -65,7 +65,7 @@
     },
     "scripts": {
         "post-root-package-install": [
-            "php -r \"\\$lines = []; if ('$ENV' === 'PROD') { \\$lines = ['POP_SERVER_USECACHE' => 'true', 'POP_SERVER_ENABLEAPI' => 'true'];} else { \\$lines = ['POP_SERVER_USECACHE' => 'false', 'POP_SERVER_ENABLEAPI' => 'true'];} \\$output = ''; foreach(\\$lines as \\$variable => \\$value) { \\$output .= \\$variable.'='.\\$value.'\n'; } \\$fp = fopen('config\/.env', 'w'); fwrite(\\$fp, \\$output); fclose(\\$fp);\""
+            "php -r \"\\$lines = []; if ('$ENV' === 'PROD') { \\$lines = ['USE_CACHE' => 'true', 'ENABLE_API' => 'true'];} else { \\$lines = ['USE_CACHE' => 'false', 'ENABLE_API' => 'true'];} \\$output = ''; foreach(\\$lines as \\$variable => \\$value) { \\$output .= \\$variable.'='.\\$value.'\n'; } \\$fp = fopen('config\/.env', 'w'); fwrite(\\$fp, \\$output); fclose(\\$fp);\""
         ]
     }
 }
