@@ -28,6 +28,6 @@ $output = '';
 foreach($lines as $variable => $value) { 
     $output .= $variable.'='.(is_bool($value) ? ($value ? "true" : "false") : $value).PHP_EOL; 
 } 
-$fp = fopen($_SERVER['PWD'].'/config/.env', 'w'); 
+$fp = fopen(dirname(dirname(dirname(__FILE__))).'/config/.env', 'w'); 
 fwrite($fp, $output); 
 fclose($fp);
