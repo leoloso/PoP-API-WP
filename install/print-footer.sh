@@ -6,7 +6,7 @@ NC='\033[0m' # No Color
 UNDERLINE=`tput smul`
 NOUNDERLINE=`tput rmul`
 
-echo "🥳 ${GREEN}Success!${NC}"
+echo -e "🥳 ${GREEN}Success!${NC}"
 echo "If you like PoP, please consider giving the project a star in GitHub 😀 ❤️"
 echo -e "👉🏽 ${ORANGE}${UNDERLINE}https://github.com/leoloso/PoP${NOUNDERLINE}${NC}"
 echo "Bye 👋 , happy using PoP!"
