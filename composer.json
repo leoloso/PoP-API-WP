@@ -41,6 +41,7 @@
         "getpop/taxonomyquery-wp": "dev-master",
         "getpop/usermeta-wp": "dev-master",
         "getpop/users-wp": "dev-master",
+        "leoloso/wp-install": ">=1.0",
         "johnpbloch/wordpress": ">=5.2"
     },
     "extra": {
@@ -66,6 +67,14 @@
     "scripts": {
         "post-root-package-install": [
             "php 'install/scripts/create-dotenv-file.php'"
+        ],
+        "post-create-project-cmd": [
+            "echo -e \"Downloading and installing the PoP API, and WordPress, through Composer... (this may take a few minutes)\"",
+            "./vendor/leoloso/wp-install/install/set-wp-config.sh",
+            "./install/pre-maybe-install-wp.sh",
+            "./vendor/leoloso/wp-install/install/maybe-install-wp.sh",
+            "./install/post-maybe-install-wp.sh",
+            "./install/print-footer.sh"
         ]
     }
 }
