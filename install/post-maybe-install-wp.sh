@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # If previously not installed, and now it is, append success message
-if [ $IS_WP_ALREADY_INSTALLED -eq 1 ]
+if [ $1 -eq 1 ]
 then
     if $(wp core is-installed); then
         ORANGE='\033[0;33m'
