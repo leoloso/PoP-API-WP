@@ -8,7 +8,9 @@
 
 # Maybe show success message
 IS_WP_ALREADY_INSTALLED=$(cat .temp) && ./install/post-maybe-install-wp.sh $IS_WP_ALREADY_INSTALLED
-./install/print-footer.sh
+
+# Maybe show footer
+./install/maybe-print-footer.sh $IS_WP_ALREADY_INSTALLED
 
 # Delete the .temp file
 rm .temp
