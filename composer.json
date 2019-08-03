@@ -65,9 +65,6 @@
         "sort-packages": true
     },
     "scripts": {
-        "pre-install-cmd": [
-            "echo -e \"Downloading and installing the PoP API, and WordPress, through Composer (this may take a few minutes...)\""
-        ],
         "post-root-package-install": [
             "php 'install/scripts/create-dotenv-file.php'"
         ],
