@@ -1,8 +1,15 @@
 #!/bin/bash
 
-if ! $(wp core is-installed); then
-    ## Check if WordPress is installed. If not, install it
-    wget -O - https://raw.githubusercontent.com/leoloso/wp-install/master/install/maybe-install-wp.sh | bash
+# Exit status 0 if WordPress installed, otherwise 1 (https://developer.wordpress.org/cli/commands/core/is-installed/)
+wp core is-installed
+ALREADY_INSTALLED=$?
+
+# Delegate to package wp-install to install WordPress or show a message
+wget -O - https://raw.githubusercontent.com/leoloso/wp-install/master/install/maybe-install-wp.sh | bash
+
+# If previously not installed, and now it is, append success message
+if [ $ALREADY_INSTALLED -eq 1 ]
+then
     if $(wp core is-installed); then
         ORANGE='\033[0;33m'
         NC='\033[0m' # No Color
