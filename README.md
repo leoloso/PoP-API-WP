@@ -4,18 +4,12 @@ Quickly launch a WordPress instance with the PoP API (REST and GraphQL-compatibl
 
 ## Install
 
-Via [Composer](https://getcomposer.org) and [WP-CLI](https://wp-cli.org/):
+Via [Composer](https://getcomposer.org) and [WP-CLI](https://wp-cli.org/) (both are assumed to be installed globally):
 
 1. Create the [WordPress database and user](https://wordpress.org/support/article/how-to-install-wordpress/#step-2-create-the-database-and-a-user)
-2. Set environment variables: Copy the code below to an editor, replace all values (such as `{YOUR_SITE_FOLDER_NAME}`) with your own values, and then paste it on the terminal to execute.
+2. Configure WordPress through environment variables: 
 
-a. Folder name where to install the site:
-
-```bash
-export FOLDER_NAME={YOUR_SITE_FOLDER_NAME} #eg: MyAwesomeSite
-```
-
-b. `wp-config.php` constants:
+> Copy the code below to an editor, replace all values (such as `{YOUR_SITE_DB_NAME}`) with your own values, and then either paste it on the terminal to execute, or save it in file "~/.bash_profile" and then execute `source ~/.bash_profile`.
 
 ```bash
 export DB_NAME={YOUR_SITE_DB_NAME} #eg: database
@@ -52,115 +46,23 @@ export LOGGED_IN_SALT={YOUR_LOGGED_IN_SALT}
 export NONCE_SALT={YOUR_NONCE_SALT}
 ```
 
-3. In the terminal, `cd` to the folder where to install the site, and execute script:
+3. Bootstrap a new project from this repo:
 
 ```bash
-wget -O - https://raw.githubusercontent.com/leoloso/pop-api-wp/master/install/install.sh | bash
+composer create-project leoloso/pop-api-wp
 ```
-
-(Or copy/paste the contents of [install.sh](https://github.com/leoloso/pop-api-wp/blob/master/install/install.sh) in the terminal, eg: for Windows users)
 
 4. Wait for a few minutes ☕️😁
-5. Check that WordPress and PoP were successfully installed:
-    - WordPress site: {YOUR_SITE_URL_WITH_HTTP}
-    - WordPress admin: {YOUR_SITE_URL_WITH_HTTP}/wp/wp-admin/
-    - PoP API (REST for posts): {YOUR_SITE_URL_WITH_HTTP}/posts/?action=api&datastructure=rest
+5. ✅ Check that WordPress was successfully installed:
 
-<!--
-```bash
+    - 👉WordPress site: {YOUR_SITE_URL_WITH_HTTP}
+    - 👉WordPress admin: {YOUR_SITE_URL_WITH_HTTP}/wp/wp-admin/
+    - 👉PoP API: {YOUR_SITE_URL_WITH_HTTP}/posts/?action=api&datastructure=rest (REST for posts)
 
-# Install PoP and WordPress through Composer:
-composer create-project leoloso/pop-api-wp $FOLDER_NAME dev-master
-
-# Install the must-use plugins:
-cd $FOLDER_NAME
-composer install
-
-# Configure wp-config.php through WP-CLI: (reference: https://developer.wordpress.org/cli/commands/config/set/)
-wp config set DB_NAME $DB_NAME
-wp config set DB_USER $DB_USER
-wp config set DB_PASSWORD $DB_PASSWORD
-wp config set DB_HOST $DB_HOST
-
-# Generate random SALT keys through WP-CLI: (reference: https://developer.wordpress.org/cli/commands/config/shuffle-salts/)
-wp config shuffle-salts
-
-# Install WordPress: (reference: https://developer.wordpress.org/cli/commands/core/install/)
-wp core install --url=$SITE_URL_WITHOUT_HTTP --title="$SITE_NAME" --admin_user=$ADMIN_USER --admin_password=$ADMIN_PASSWORD --admin_email=$ADMIN_EMAIL
-
-# Update the site URL, adding "/wp"
-wp option update siteurl $SITE_URL_WITH_HTTP/wp
-```
--->
 ### Configure application options (optional)
 
 Upon installation, the Composer script will create file `config/.env` including default values for application options (passed as environment variables). You can further edit this file, or even create more specific ones (following [Symfony's Dotenv component](https://symfony.com/doc/current/components/dotenv.html)'s file hierarchy).
 
-<!--
-2. Execute the bash script below, replacing all variables values (such as `{YOUR_SITE_FOLDER_NAME}`) with your own values:
-
-```bash
-FOLDER_NAME={YOUR_SITE_FOLDER_NAME} \
-DB_NAME={YOUR_SITE_DB_NAME} \
-DB_USER={YOUR_SITE_DB_USER} \
-DB_PASSWORD={YOUR_SITE_DB_PASSWORD} \
-DB_HOST={YOUR_SITE_DB_HOST} \
-SITE_URL_WITHOUT_HTTP={YOUR_SITE_URL_WITHOUT_HTTP} \
-SITE_URL_WITH_HTTP={YOUR_SITE_URL_WITH_HTTP} \
-SITE_NAME="{YOUR_SITE_NAME}" \
-ADMIN_USER={ADMIN_USER} \
-ADMIN_PASSWORD={ADMIN_PASSWORD} \
-ADMIN_EMAIL={ADMIN_EMAIL} \
-wget -O - https://raw.githubusercontent.com/leoloso/pop-api-wp/master/install/install.sh | bash
-```
--->
-
-<!--
-**1. Download PoP and WordPress via Composer**
-
-```bash
-$ composer create-project leoloso/pop-api-wp {YOUR_SITE_NAME} dev-master
-```
-
-_For more control:_ The script above can be prepended with environment variables to configure WordPress and set the default application options.
-
-WordPress configuration (added to `wp-config.php`):
-
-- `DB_NAME`: WordPress DB name
-- `DB_USER`: WordPress DB user
-- `DB_PASSWORD`: WordPress DB password
-- `DB_HOST`: WordPress DB host
-- `GENERATE_SALTS`: Generate random salts (`true` or `false`, default `false`)
-
-Application options:
-
-- `ENV`: environment (`"DEV"` or `"PROD"`, default `"DEV"`)
-
-Example: 
-
-```bash
-$ DB_NAME={YOUR_DB_NAME} \
-DB_USER={YOUR_DB_USER} \
-DB_PASSWORD={YOUR_DB_PASSWORD} \
-DB_HOST={YOUR_DB_HOST} \
-GENERATE_SALTS=true \
-composer create-project leoloso/pop-api-wp {YOUR_SITE_NAME} dev-master
-```
-
-**2. Install WordPress**
-
-- [Install the WordPress database](https://wordpress.org/support/article/how-to-install-wordpress/#step-2-create-the-database-and-a-user)
-- [Configure `wp-config.php`](https://wordpress.org/support/article/how-to-install-wordpress/#step-3-set-up-wp-config-php)
-- [Run the install script](https://wordpress.org/support/article/how-to-install-wordpress/#step-5-run-the-install-script)
-
-**3. Modify the Site Address (URL)**
-
-Log in to the WordPress admin panel and go to Settings => General (`wp-admin/options-general.php`). There, remove the `/wp` bit from the Site Address (URL) input and save.
-
-**4. Set-up application options (optional)**
-
-Upon installation, the Composer script will create file `config/.env` including default values for application options (passed as environment variables). You can further edit this file, or even create more specific ones (following [Symfony's Dotenv component](https://symfony.com/doc/current/components/dotenv.html)'s file hierarchy).
--->
 ## Installed Components
 
 This bootstrapper will install the following components (for WordPress):
