@@ -5,7 +5,7 @@ NC='\033[0m' # No Color
 
 # Install PoP and WordPress through Composer:
 echo -e "Downloading and installing PoP and WordPress through Composer... ${YELLOW}(this may take a few minutes)${NC}"
-composer create-project leoloso/pop-api-wp $FOLDER_NAME dev-master
+composer create-project leoloso/pop-api-wp $FOLDER_NAME
 
 # Install the must-use plugins:
 cd $FOLDER_NAME
