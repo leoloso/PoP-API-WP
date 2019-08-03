@@ -5,7 +5,7 @@ wp core is-installed
 ALREADY_INSTALLED=$?
 
 # Delegate to package wp-install to install WordPress or show a message
-wget -O - https://raw.githubusercontent.com/leoloso/wp-install/master/install/maybe-install-wp.sh | bash
+wget -O - https://raw.githubusercontent.com/leoloso/wp-install/master/install/maybe-install-wp.sh --quiet | bash
 
 # If previously not installed, and now it is, append success message
 if [ $ALREADY_INSTALLED -eq 1 ]

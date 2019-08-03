@@ -12,12 +12,12 @@ cd $FOLDER_NAME
 composer install
 
 # Configure wp-config.php through WP-CLI
-wget -O - https://raw.githubusercontent.com/leoloso/wp-install/master/install/set-wp-config.sh | bash
+wget -O - https://raw.githubusercontent.com/leoloso/wp-install/master/install/set-wp-config.sh --quiet | bash
 
 ## Check if WordPress is installed. If not, install it
 #./maybe-install-wp.sh
-wget -O - https://raw.githubusercontent.com/leoloso/pop-api-wp/master/install/maybe-install-wp.sh | bash
+wget -O - https://raw.githubusercontent.com/leoloso/pop-api-wp/master/install/maybe-install-wp.sh --quiet | bash
 
 ## Farewell message
 #./print-footer.sh
-wget -O - https://raw.githubusercontent.com/leoloso/pop-api-wp/master/install/print-footer.sh | bash
+wget -O - https://raw.githubusercontent.com/leoloso/pop-api-wp/master/install/print-footer.sh --quiet | bash
