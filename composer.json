@@ -65,10 +65,8 @@
         "sort-packages": true
     },
     "scripts": {
-        "post-root-package-install": [
-            "php 'install/scripts/create-dotenv-file.php'"
-        ],
         "post-create-project-cmd": [
+            "php 'install/scripts/create-dotenv-file.php'",
             "./install/install.sh"
         ]
     }
