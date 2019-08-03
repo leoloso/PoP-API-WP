@@ -65,10 +65,8 @@
         "sort-packages": true
     },
     "scripts": {
-        "post-root-package-install": [
-            "./vendor/leoloso/wp-install/install/validate-env-variables.sh"
-        ],
         "post-create-project-cmd": [
+            "./vendor/leoloso/wp-install/install/validate-env-variables.sh",
             "php 'install/scripts/create-dotenv-file.php'",
             "./install/install.sh"
         ]
