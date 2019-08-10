@@ -13,7 +13,6 @@ addEnvVariablesToConfigFile([
     'ENABLE_CONFIG_BY_PARAMS' => false,
     'DISABLE_API' => false,
     'EXTERNAL_SITES_RUN_SAME_SOFTWARE' => false,
-    'IS_CONFIG_CACHE_DEBUG' => false,
 ], [
     // DEV
     'USE_CACHE' => false,
@@ -23,5 +22,4 @@ addEnvVariablesToConfigFile([
     'ENABLE_CONFIG_BY_PARAMS' => false,
     'DISABLE_API' => false,
     'EXTERNAL_SITES_RUN_SAME_SOFTWARE' => false,
-    'IS_CONFIG_CACHE_DEBUG' => true,
 ]);
