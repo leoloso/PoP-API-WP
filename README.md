@@ -116,7 +116,6 @@ _List of posts + author data:_<br/>[id|title|date|url,author.id|name|url,author.
 
 _Single post + tags, comments and comment author info:_<br/>[id|title|cat-slugs,tags.id|slug|count|url,comments.id|content|date,comments.author.id|name|url](https://nextapi.getpop.org/2013/01/11/markup-html-tags-and-formatting/?action=api&datastructure=graphql&fields=id|title|cat-slugs,tags.id|slug|count|url,comments.id|content|date,comments.author.id|name|url)
 
-
 ### Users
 
 **Endpoints:**
@@ -149,7 +148,6 @@ _Author:_
 _List of users + up to 2 posts for each, ordered by date:_<br/>[id|name|url,posts(limit:2;order:desc;orderby:date).id|title|url|date](https://nextapi.getpop.org/users/?action=api&datastructure=graphql&fields=id|name|url,posts(limit:2;order:desc;orderby:date).id|title|url|date)
 
 _Author + all posts, with their tags and comments, and the comment author info:_<br/>[id|name|url,posts.id|title,posts.tags.id|slug|count|url,posts.comments.id|content|date,posts.comments.author.id|name](https://nextapi.getpop.org/author/themedemos/?action=api&datastructure=graphql&fields=id|name|url,posts.id|title,posts.tags.id|slug|count|url,posts.comments.id|content|date,posts.comments.author.id|name)
-
 
 ### Comments
 
@@ -201,7 +199,6 @@ _List of tags + all their posts ordered by title, their comments, and the commen
 
 _Tag + all their posts, their comments and the comment authors:_<br/>[id|slug|count|url,posts.id|title,posts.comments.content|date,posts.comments.author.id|name|url](https://nextapi.getpop.org/tag/html/?action=api&datastructure=graphql&fields=id|slug|count|url,posts.id|title,posts.comments.content|date,posts.comments.author.id|name|url)
 
-
 ### Pages
 
 **Endpoints:**
@@ -226,7 +223,6 @@ _Page:_
 **Examples:**
 
 _Page:_<br/>[id|title|content|url](https://nextapi.getpop.org/about/?action=api&datastructure=graphql&fields=id|title|content|url)
-
 
 ## Credits
 
