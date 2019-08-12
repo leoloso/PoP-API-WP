@@ -75,11 +75,11 @@ This bootstrapper will install the following components (for WordPress):
 
 ## Usage
 
-For the **REST-compatible** API, add parameters `action=api&datastructure=rest` to the endpoint URL. 
+For the **REST-compatible API**, add parameters `action=api&datastructure=rest` to the endpoint URL. 
 
-For the **GraphQL-compatible** API, add parameters `action=api&datastructure=graphql` to the endpoint URL, and parameter `fields` with the fields to retrieve (using a [custom dot notation](https://github.com/leoloso/PoP#how-does-it-work)) from the list of fields defined below.
+For the **GraphQL-compatible API**, add parameters `action=api&datastructure=graphql` to the endpoint URL, and parameter `fields` with the fields to retrieve (using a [custom dot notation](https://github.com/leoloso/PoP#how-does-it-work)) from the list of fields defined below.
 
-For **PoP native** API, add parameters `action=api` to the endpoint URL, and parameter `fields` similar to GraphQL.
+For the **PoP native API**, add parameters `action=api` to the endpoint URL, and parameter `fields` similar to GraphQL.
 
 Currently, the API supports the following entities and fields:
 
@@ -87,59 +87,69 @@ Currently, the API supports the following entities and fields:
 
 **Endpoints**:
 
-- List of posts:
-    - [/posts/?action=api&datastructure=rest](https://nextapi.getpop.org/posts/?action=api&datastructure=rest) (REST)
-    - [/posts/?action=api&datastructure=graphql](https://nextapi.getpop.org/posts/?action=api&datastructure=graphql&fields=id|title|url) (GraphQL)
-    - [/posts/?action=api](https://nextapi.getpop.org/posts/?action=api&fields=id|title|url) (PoP native)
-- Single post:
-    - [/{SINGLE-POST-URL}/?action=api&datastructure=rest](https://nextapi.getpop.org/2013/01/11/markup-html-tags-and-formatting/?action=api&datastructure=rest) (REST)
-    - [/{SINGLE-POST-URL}/?action=api&datastructure=graphql](https://nextapi.getpop.org/2013/01/11/markup-html-tags-and-formatting/?action=api&datastructure=graphql&fields=id|title|date|content) (GraphQL)
-    - [/{SINGLE-POST-URL}/?action=api](https://nextapi.getpop.org/2013/01/11/markup-html-tags-and-formatting/?action=api&fields=id|title|date|content) (PoP native)
+_List of posts:_
+
+- **REST:** [/posts/?action=api&datastructure=rest](https://nextapi.getpop.org/posts/?action=api&datastructure=rest)
+- **GraphQL:** [/posts/?action=api&datastructure=graphql](https://nextapi.getpop.org/posts/?action=api&datastructure=graphql&fields=id|title|url)
+- **PoP native:** [/posts/?action=api](https://nextapi.getpop.org/posts/?action=api&fields=id|title|url)
+
+_Single post:_
+
+- **REST:** [/{SINGLE-POST-URL}/?action=api&datastructure=rest](https://nextapi.getpop.org/2013/01/11/markup-html-tags-and-formatting/?action=api&datastructure=rest) 
+- **GraphQL:** [/{SINGLE-POST-URL}/?action=api&datastructure=graphql](https://nextapi.getpop.org/2013/01/11/markup-html-tags-and-formatting/?action=api&datastructure=graphql&fields=id|title|date|content)
+- **PoP native:** [/{SINGLE-POST-URL}/?action=api](https://nextapi.getpop.org/2013/01/11/markup-html-tags-and-formatting/?action=api&fields=id|title|date|content)
 
 **GraphQL fields:**
 
 <table>
 <thead>
-<tr><th>Property (with modifiers)</th><th>Relational (with modifiers)</th></tr>
+<tr><th>Property (modifiers)</th><th>Relational (modifiers)</th></tr>
 </thead>
 <tbody>
 <tr><td>id<br/>post-type<br/>published<br/>not-published<br/>title<br/>content<br/>url<br/>endpoint<br/>excerpt<br/>status<br/>is-draft<br/>date<br/>datetime<br/>comments-url<br/>comments-count<br/>has-comments<br/>published-with-comments<br/>cats<br/>cat<br/>cat-name<br/>cat-slugs<br/>tag-names<br/>post-block-metadata (blockname)</td><td>comments<br/>tags<br/>author</td></tr>
 </tbody>
 </table>
 
-_Examples:_
+**Examples:**
 
-- List of posts + author data:<br/>[id|title|date|url,author.id|name|url,author.posts.id|title|url](https://nextapi.getpop.org/posts/?action=api&datastructure=graphql&fields=id|title|date|url,author.id|name|url,author.posts.id|title|url)
-- Single post + tags, comments and comment author info:<br/>[id|title|cat-slugs,tags.id|slug|count|url,comments.id|content|date,comments.author.id|name|url](https://nextapi.getpop.org/2013/01/11/markup-html-tags-and-formatting/?action=api&datastructure=graphql&fields=id|title|cat-slugs,tags.id|slug|count|url,comments.id|content|date,comments.author.id|name|url)
+_List of posts + author data:_<br/>[id|title|date|url,author.id|name|url,author.posts.id|title|url](https://nextapi.getpop.org/posts/?action=api&datastructure=graphql&fields=id|title|date|url,author.id|name|url,author.posts.id|title|url)
+
+_Single post + tags, comments and comment author info:_<br/>[id|title|cat-slugs,tags.id|slug|count|url,comments.id|content|date,comments.author.id|name|url](https://nextapi.getpop.org/2013/01/11/markup-html-tags-and-formatting/?action=api&datastructure=graphql&fields=id|title|cat-slugs,tags.id|slug|count|url,comments.id|content|date,comments.author.id|name|url)
+
 
 ### Users
 
 **Endpoints:**
 
-- List of users:
-    - [/users/?action=api&datastructure=rest](https://nextapi.getpop.org/users/?action=api&datastructure=rest) (REST)
-    - [/users/?action=api&datastructure=graphql](https://nextapi.getpop.org/users/?action=api&datastructure=graphql&fields=id|name|url) (GraphQL)
-    - [/users/?action=api](https://nextapi.getpop.org/users/?action=api&fields=id|name|url) (PoP native)
-- Author:
-    - [/{AUTHOR-URL}/?action=api&datastructure=rest](https://nextapi.getpop.org/author/themedemos/?action=api&datastructure=rest) (REST)
-    - [/{AUTHOR-URL}/?action=api&datastructure=graphql](https://nextapi.getpop.org/author/themedemos/?action=api&datastructure=graphql&fields=id|name|description) (GraphQL)
-    - [/{AUTHOR-URL}/?action=api](https://nextapi.getpop.org/author/themedemos/?action=api&fields=id|name|description) (PoP native)
+_List of users:_
+
+- **REST:** [/users/?action=api&datastructure=rest](https://nextapi.getpop.org/users/?action=api&datastructure=rest)
+- **GraphQL:** [/users/?action=api&datastructure=graphql](https://nextapi.getpop.org/users/?action=api&datastructure=graphql&fields=id|name|url)
+- **PoP native:** [/users/?action=api](https://nextapi.getpop.org/users/?action=api&fields=id|name|url)
+
+_Author:_
+
+- **REST:** [/{AUTHOR-URL}/?action=api&datastructure=rest](https://nextapi.getpop.org/author/themedemos/?action=api&datastructure=rest) 
+- **GraphQL:** [/{AUTHOR-URL}/?action=api&datastructure=graphql](https://nextapi.getpop.org/author/themedemos/?action=api&datastructure=graphql&fields=id|name|description)
+- **PoP native:** [/{AUTHOR-URL}/?action=api](https://nextapi.getpop.org/author/themedemos/?action=api&fields=id|name|description)
 
 **GraphQL fields:**
 
 <table>
 <thead>
-<tr><th>Property (with modifiers)</th><th>Relational (with modifiers)</th></tr>
+<tr><th>Property (modifiers)</th><th>Relational (modifiers)</th></tr>
 </thead>
 <tbody>
 <tr><td>id<br/>username<br/>user-nicename<br/>nicename<br/>name<br/>display-name<br/>firstname<br/>lastname<br/>email<br/>url<br/>endpoint<br/>description<br/>website-url</td><td>posts (limit, offset, order, orderby, search)</td></tr>
 </tbody>
 </table>
 
-_Examples_:
+**Examples:**
 
-- List of users + up to 2 posts for each, ordered by date:<br/>[id|name|url,posts(limit:2;order:desc;orderby:date).id|title|url|date](https://nextapi.getpop.org/users/?action=api&datastructure=graphql&fields=id|name|url,posts(limit:2;order:desc;orderby:date).id|title|url|date)
-- Author + all posts, with their tags and comments, and the comment author info:<br/>[id|name|url,posts.id|title,posts.tags.id|slug|count|url,posts.comments.id|content|date,posts.comments.author.id|name](https://nextapi.getpop.org/author/themedemos/?action=api&datastructure=graphql&fields=id|name|url,posts.id|title,posts.tags.id|slug|count|url,posts.comments.id|content|date,posts.comments.author.id|name)
+_List of users + up to 2 posts for each, ordered by date:_<br/>[id|name|url,posts(limit:2;order:desc;orderby:date).id|title|url|date](https://nextapi.getpop.org/users/?action=api&datastructure=graphql&fields=id|name|url,posts(limit:2;order:desc;orderby:date).id|title|url|date)
+
+_Author + all posts, with their tags and comments, and the comment author info:_<br/>[id|name|url,posts.id|title,posts.tags.id|slug|count|url,posts.comments.id|content|date,posts.comments.author.id|name](https://nextapi.getpop.org/author/themedemos/?action=api&datastructure=graphql&fields=id|name|url,posts.id|title,posts.tags.id|slug|count|url,posts.comments.id|content|date,posts.comments.author.id|name)
+
 
 ### Comments
 
@@ -147,69 +157,76 @@ _Examples_:
 
 <table>
 <thead>
-<tr><th>Property (with modifiers)</th><th>Relational (with modifiers)</th></tr>
+<tr><th>Property (modifiers)</th><th>Relational (modifiers)</th></tr>
 </thead>
 <tbody>
 <tr><td>id<br/>content<br/>author-name<br/>author-url<br/>author-email<br/>approved<br/>type<br/>date</td><td>author<br/>post<br/>post-id<br/>parent</td></tr>
 </tbody>
 </table>
 
-_Examples_:
+**Examples:**
 
-- Single post's comments:<br/>[comments.id|content|date|type|approved|author-name|author-url|author-email](https://nextapi.getpop.org/2013/01/11/markup-html-tags-and-formatting/?action=api&datastructure=graphql&fields=comments.id|content|date|type|approved|author-name|author-url|author-email)
+_Single post's comments:_<br/>[comments.id|content|date|type|approved|author-name|author-url|author-email](https://nextapi.getpop.org/2013/01/11/markup-html-tags-and-formatting/?action=api&datastructure=graphql&fields=comments.id|content|date|type|approved|author-name|author-url|author-email)
 
 ### Tags
 
 **Endpoints:**
 
-- List of tags:
-    - [/tags/?action=api&datastructure=rest](https://nextapi.getpop.org/tags/?action=api&datastructure=rest) (REST)
-    - [/tags/?action=api&datastructure=graphql](https://nextapi.getpop.org/tags/?action=api&datastructure=graphql&fields=id|slug|count|url) (GraphQL)
-    - [/tags/?action=api](https://nextapi.getpop.org/tags/?action=api&fields=id|slug|count|url) (PoP native)
-- Tag:
-    - [/{TAG-URL}/?action=api&datastructure=rest](https://nextapi.getpop.org/tag/html/?action=api&datastructure=rest) (REST)
-    - [/{TAG-URL}/?action=api&datastructure=graphql](https://nextapi.getpop.org/tag/html/?action=api&datastructure=graphql&fields=id|name|slug|count) (GraphQL)
-    - [/{TAG-URL}/?action=api](https://nextapi.getpop.org/tag/html/?action=api&fields=id|name|slug|count) (PoP native)
+_List of tags:_
+
+- **REST:** [/tags/?action=api&datastructure=rest](https://nextapi.getpop.org/tags/?action=api&datastructure=rest)
+- **GraphQL:** [/tags/?action=api&datastructure=graphql](https://nextapi.getpop.org/tags/?action=api&datastructure=graphql&fields=id|slug|count|url)
+- **PoP native:** [/tags/?action=api](https://nextapi.getpop.org/tags/?action=api&fields=id|slug|count|url)
+
+_Tag:_
+
+- **REST:** [/{TAG-URL}/?action=api&datastructure=rest](https://nextapi.getpop.org/tag/html/?action=api&datastructure=rest) 
+- **GraphQL:** [/{TAG-URL}/?action=api&datastructure=graphql](https://nextapi.getpop.org/tag/html/?action=api&datastructure=graphql&fields=id|name|slug|count)
+- **PoP native:** [/{TAG-URL}/?action=api](https://nextapi.getpop.org/tag/html/?action=api&fields=id|name|slug|count)
 
 **GraphQL fields:**
 
 <table>
 <thead>
-<tr><th>Property (with modifiers)</th><th>Relational (with modifiers)</th></tr>
+<tr><th>Property (modifiers)</th><th>Relational (modifiers)</th></tr>
 </thead>
 <tbody>
 <tr><td>id<br/>symbol<br/>symbolnamedescription<br/>namedescription<br/>url<br/>endpoint<br/>symbolname<br/>name<br/>slug<br/>term_group<br/>term_taxonomy_id<br/>taxonomy<br/>description<br/>count</td><td>parent<br/>posts (limit, offset, order, orderby, search)</td></tr>
 </tbody>
 </table>
 
-_Examples_:
+**Examples:**
 
-- List of tags + all their posts ordered by title, their comments, and the comment authors:<br/>[id|slug|count|url,posts(orderby:title;order:asc).id|title|url|date](https://nextapi.getpop.org/tags/?action=api&datastructure=graphql&fields=id|slug|count|url,posts(orderby:title;order:asc).id|title|url|date)
-- Tag + all their posts, their comments and the comment authors:<br/>[id|slug|count|url,posts.id|title,posts.comments.content|date,posts.comments.author.id|name|url](https://nextapi.getpop.org/tag/html/?action=api&datastructure=graphql&fields=id|slug|count|url,posts.id|title,posts.comments.content|date,posts.comments.author.id|name|url)
+_List of tags + all their posts ordered by title, their comments, and the comment authors:_<br/>[id|slug|count|url,posts(orderby:title;order:asc).id|title|url|date](https://nextapi.getpop.org/tags/?action=api&datastructure=graphql&fields=id|slug|count|url,posts(orderby:title;order:asc).id|title|url|date)
+
+_Tag + all their posts, their comments and the comment authors:_<br/>[id|slug|count|url,posts.id|title,posts.comments.content|date,posts.comments.author.id|name|url](https://nextapi.getpop.org/tag/html/?action=api&datastructure=graphql&fields=id|slug|count|url,posts.id|title,posts.comments.content|date,posts.comments.author.id|name|url)
+
 
 ### Pages
 
 **Endpoints:**
 
-- Page:
-    - [/{PAGE-URL}/?action=api&datastructure=rest](https://nextapi.getpop.org/about/?action=api&datastructure=rest) (REST)
-    - [/{PAGE-URL}/?action=api&datastructure=graphql](https://nextapi.getpop.org/about/?action=api&datastructure=graphql&fields=id|title|content) (GraphQL)
-    - [/{PAGE-URL}/?action=api](https://nextapi.getpop.org/about/?action=api&fields=id|title|content) (PoP native)
+_Page:_
+
+- **REST:** [/{PAGE-URL}/?action=api&datastructure=rest](https://nextapi.getpop.org/about/?action=api&datastructure=rest)
+- **GraphQL:** [/{PAGE-URL}/?action=api&datastructure=graphql](https://nextapi.getpop.org/about/?action=api&datastructure=graphql&fields=id|title|content)
+- **PoP native:** [/{PAGE-URL}/?action=api](https://nextapi.getpop.org/about/?action=api&fields=id|title|content)
 
 **GraphQL fields:**
 
 <table>
 <thead>
-<tr><th>Property (with modifiers)</th><th>Relational (with modifiers)</th></tr>
+<tr><th>Property (modifiers)</th><th>Relational (modifiers)</th></tr>
 </thead>
 <tbody>
 <tr><td>id<br/>title<br/>content<br/>url</td><td>&nbsp;</td></tr>
 </tbody>
 </table>
 
-_Examples_:
+**Examples:**
 
-- Page:<br/>[id|title|content|url](https://nextapi.getpop.org/about/?action=api&datastructure=graphql&fields=id|title|content|url)
+_Page:_<br/>[id|title|content|url](https://nextapi.getpop.org/about/?action=api&datastructure=graphql&fields=id|title|content|url)
+
 
 ## Credits
 
