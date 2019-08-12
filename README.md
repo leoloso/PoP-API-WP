@@ -77,7 +77,7 @@ This bootstrapper will install the following components (for WordPress):
 
 For the **REST-compatible API**, add parameters `action=api&datastructure=rest` to the endpoint URL. 
 
-For the **GraphQL-compatible API**, add parameters `action=api&datastructure=graphql` to the endpoint URL, and parameter `fields` with the fields to retrieve (using a [custom dot notation](https://github.com/leoloso/PoP#how-does-it-work)) from the list of fields defined below.
+For the **GraphQL-compatible API**, add parameters `action=api&datastructure=graphql` to the endpoint URL, and parameter `fields` with the fields to retrieve (using a [custom dot notation](https://github.com/leoloso/PoP#defining-what-data-to-fetch-through-fields)) from the list of fields defined below. In addition, a field may have [modifiers](https://github.com/leoloso/PoP#field-modifiers) to modify its results.
 
 For the **PoP native API**, add parameters `action=api` to the endpoint URL, and parameter `fields` similar to GraphQL.
 
