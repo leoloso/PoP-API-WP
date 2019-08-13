@@ -4,6 +4,8 @@ Quickly launch a WordPress instance with the PoP API (REST and GraphQL-compatibl
 
 ## Install
 
+PoP requires PHP 7.1 or higher.
+
 ### Installing PoP on an existing WordPress site
 
 Via a WordPress plugin:
