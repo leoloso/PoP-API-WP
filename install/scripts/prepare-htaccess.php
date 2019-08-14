@@ -4,7 +4,7 @@
  * This rewrite configuration must be printed before the WordPress rewrite (# BEGIN WordPress ...)
  */
 $apiRewriteString = <<<EOD
-# API rewrite
+# Pretty permalinks for API endpoints: rewrite from /some-url/api/ to /some-url/?action=api
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
