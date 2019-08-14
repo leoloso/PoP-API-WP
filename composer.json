@@ -67,6 +67,7 @@
     "scripts": {
         "post-create-project-cmd": [
             "./vendor/leoloso/wp-install/install/validate-env-variables.sh",
+            "php 'install/scripts/prepare-htaccess.php'",
             "php 'install/scripts/create-dotenv-file.php'",
             "./install/install.sh"
         ]
