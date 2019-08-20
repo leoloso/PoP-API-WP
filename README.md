@@ -161,6 +161,7 @@ This bootstrapper will install the following components (for WordPress):
 - [Taxonomies](https://github.com/getpop/taxonomies) (tags and categories)
 - [Comments](https://github.com/getpop/comments)
 - [Pages](https://github.com/getpop/pages)
+- [Media](https://github.com/getpop/media)
 
 ## Usage
 
