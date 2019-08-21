@@ -61,6 +61,8 @@ _Suggested (to load data from posts, users, comments and taxonomies):_
         "getpop/taxonomies-wp": "dev-master",
         "getpop/taxonomymeta-wp": "dev-master",
         "getpop/taxonomyquery-wp": "dev-master",
+        "getpop/api-graphql": "dev-master",
+        "getpop/api-rest": "dev-master",
         ...
     }
     ...
