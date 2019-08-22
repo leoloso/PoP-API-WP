@@ -6,7 +6,7 @@ require_once dirname(__FILE__).'/functions.php';
  */
 addEnvVariablesToConfigFile([
     // PROD
-    'USE_CACHE' => true,
+    'USE_COMPONENT_MODEL_CACHE' => true,
     'FAIL_IF_SUBCOMPONENT_DATALOADER_IS_UNDEFINED' => false,
     'ENABLE_EXTRA_ROUTES_BY_PARAMS' => false,
     'DISABLE_CUSTOM_CMS_CODE' => false,
@@ -15,7 +15,7 @@ addEnvVariablesToConfigFile([
     'EXTERNAL_SITES_RUN_SAME_SOFTWARE' => false,
 ], [
     // DEV
-    'USE_CACHE' => false,
+    'USE_COMPONENT_MODEL_CACHE' => false,
     'FAIL_IF_SUBCOMPONENT_DATALOADER_IS_UNDEFINED' => true,
     'ENABLE_EXTRA_ROUTES_BY_PARAMS' => false,
     'DISABLE_CUSTOM_CMS_CODE' => false,
