@@ -107,7 +107,7 @@ RewriteRule ^(.*)/api/?$ /$1/?scheme=api [L,P,QSA]
 # 1 and 2. GraphQL or REST: Rewrite from api/(graphql|rest)/ to /?scheme=api&datastructure=(graphql|rest)
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
-RewriteRule ^api/(graphql|rest)/?$ /?scheme=api&datastructure=$2 [L,P,QSA]
+RewriteRule ^api/(graphql|rest)/?$ /?scheme=api&datastructure=$1 [L,P,QSA]
 
 # 3. PoP native: Rewrite from api/ to /?scheme=api
 RewriteCond %{SCRIPT_FILENAME} !-d
