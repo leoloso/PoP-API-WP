@@ -11,6 +11,7 @@ addEnvVariablesToConfigFile([
     'ENABLE_EXTRA_ROUTES_BY_PARAMS' => false,
     'DISABLE_CUSTOM_CMS_CODE' => false,
     'ENABLE_CONFIG_BY_PARAMS' => false,
+    'ENABLE_VERSION_BY_PARAMS' => false,
     'DISABLE_API' => false,
     'EXTERNAL_SITES_RUN_SAME_SOFTWARE' => false,
 ], [
@@ -20,6 +21,7 @@ addEnvVariablesToConfigFile([
     'ENABLE_EXTRA_ROUTES_BY_PARAMS' => false,
     'DISABLE_CUSTOM_CMS_CODE' => false,
     'ENABLE_CONFIG_BY_PARAMS' => false,
+    'ENABLE_VERSION_BY_PARAMS' => false,
     'DISABLE_API' => false,
     'EXTERNAL_SITES_RUN_SAME_SOFTWARE' => false,
 ]);
