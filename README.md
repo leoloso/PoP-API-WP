@@ -55,6 +55,7 @@ _Suggested (to load data from posts, users, comments and taxonomies):_
         "getpop/users-wp": "dev-master",
         "getpop/usermeta-wp": "dev-master",
         "getpop/pages-wp": "dev-master",
+        "getpop/media-wp": "dev-master",
         "getpop/comments-wp": "dev-master",
         "getpop/commentmeta-wp": "dev-master",
         "getpop/taxonomies-wp": "dev-master",
