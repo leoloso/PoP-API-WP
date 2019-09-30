@@ -117,7 +117,7 @@ RewriteRule ^api/?$ /?scheme=api [L,P,QSA]
 </IfModule>
 ```
 
-6. ✅ Check that the PoP API works by loading in your site: `/posts/api/?datastructure=rest` (assuming that package `"getpop/posts-wp"` and the URL rewrite were added, as suggested)
+6. ✅ Check that the PoP API works by loading in your site: `/api/graphql/?fields=__schema` (assuming that pretty permalinks for the API endpoints are enabled, as suggested above)
 
 ### Creating a new WordPress site with PoP installed
 
