@@ -117,7 +117,7 @@ RewriteRule ^api/?$ /?scheme=api [L,P,QSA]
 </IfModule>
 ```
 
-6. ✅ Check that the PoP API works by loading in your site: `/api/?fields=__schema` (assuming that pretty permalinks for the API endpoints are enabled, as suggested above)
+6. ✅ Check that the PoP API works by loading in your site: `/api/?query=__schema` (assuming that pretty permalinks for the API endpoints are enabled, as suggested above)
 
 ### Creating a new WordPress site with PoP installed
 
@@ -181,7 +181,7 @@ $ composer install
 
 - 👉 WordPress site: `{YOUR_SITE_URL_WITH_HTTP}`
 - 👉 WordPress admin: `{YOUR_SITE_URL_WITH_HTTP}`/wp/wp-admin/
-- 👉 PoP API: `{YOUR_SITE_URL_WITH_HTTP}/api/?fields=__schema`
+- 👉 PoP API: `{YOUR_SITE_URL_WITH_HTTP}/api/?query=__schema`
 
 ### Configure application options (optional)
 
