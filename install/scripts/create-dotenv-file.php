@@ -13,6 +13,7 @@ addEnvVariablesToConfigFile([
     'ENABLE_VERSION_BY_PARAMS' => false,
     'DISABLE_API' => false,
     'EXTERNAL_SITES_RUN_SAME_SOFTWARE' => false,
+    'ENABLE_SHOW_LOGS' => false,
 ], [
     // DEV
     'USE_COMPONENT_MODEL_CACHE' => false,
@@ -22,4 +23,5 @@ addEnvVariablesToConfigFile([
     'ENABLE_VERSION_BY_PARAMS' => false,
     'DISABLE_API' => false,
     'EXTERNAL_SITES_RUN_SAME_SOFTWARE' => false,
+    'ENABLE_SHOW_LOGS' => true,
 ]);
