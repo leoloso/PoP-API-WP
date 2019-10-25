@@ -12,6 +12,7 @@ addEnvVariablesToConfigFile([
     'ENABLE_CONFIG_BY_PARAMS' => false,
     'ENABLE_VERSION_BY_PARAMS' => false,
     'DISABLE_API' => false,
+    'DISABLE_REST_API' => false,
     'EXTERNAL_SITES_RUN_SAME_SOFTWARE' => false,
     'ENABLE_SHOW_LOGS' => false,
 ], [
@@ -22,6 +23,7 @@ addEnvVariablesToConfigFile([
     'ENABLE_CONFIG_BY_PARAMS' => false,
     'ENABLE_VERSION_BY_PARAMS' => false,
     'DISABLE_API' => false,
+    'DISABLE_REST_API' => false,
     'EXTERNAL_SITES_RUN_SAME_SOFTWARE' => false,
     'ENABLE_SHOW_LOGS' => true,
 ]);
