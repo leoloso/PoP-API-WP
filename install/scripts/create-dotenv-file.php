@@ -13,6 +13,7 @@ addEnvVariablesToConfigFile([
     'ENABLE_VERSION_BY_PARAMS' => false,
     'DISABLE_API' => false,
     'DISABLE_REST_API' => false,
+    'DISABLE_GRAPHQL_API' => false,
     'EXTERNAL_SITES_RUN_SAME_SOFTWARE' => false,
     'ENABLE_SHOW_LOGS' => false,
 ], [
@@ -24,6 +25,7 @@ addEnvVariablesToConfigFile([
     'ENABLE_VERSION_BY_PARAMS' => false,
     'DISABLE_API' => false,
     'DISABLE_REST_API' => false,
+    'DISABLE_GRAPHQL_API' => false,
     'EXTERNAL_SITES_RUN_SAME_SOFTWARE' => false,
     'ENABLE_SHOW_LOGS' => true,
 ]);
