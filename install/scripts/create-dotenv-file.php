@@ -16,6 +16,9 @@ addEnvVariablesToConfigFile([
     'DISABLE_GRAPHQL_API' => false,
     'EXTERNAL_SITES_RUN_SAME_SOFTWARE' => false,
     'ENABLE_SHOW_LOGS' => false,
+    'REMOVE_FIELD_IF_DIRECTIVE_FAILED' => false,
+    'DEFAULT_FEATURED_IMAGE_ID' => 0,
+    'GOOGLE_TRANSLATE_API_KEY' => '',
 ], [
     // DEV
     'USE_COMPONENT_MODEL_CACHE' => false,
@@ -28,4 +31,7 @@ addEnvVariablesToConfigFile([
     'DISABLE_GRAPHQL_API' => false,
     'EXTERNAL_SITES_RUN_SAME_SOFTWARE' => false,
     'ENABLE_SHOW_LOGS' => true,
+    'REMOVE_FIELD_IF_DIRECTIVE_FAILED' => false,
+    'DEFAULT_FEATURED_IMAGE_ID' => 0,
+    'GOOGLE_TRANSLATE_API_KEY' => '',
 ]);
