@@ -51,11 +51,12 @@ _Suggested (to load data from posts, users, comments and taxonomies):_
     "require": {
         ...
         "getpop/posts-wp": "dev-master",
+        "getpop/posts-api": "dev-master",
         "getpop/postmeta-wp": "dev-master",
         "getpop/users-wp": "dev-master",
         "getpop/usermeta-wp": "dev-master",
         "getpop/pages-wp": "dev-master",
-        "getpop/media-wp": "dev-master",
+        "getpop/postmedia-wp": "dev-master",
         "getpop/comments-wp": "dev-master",
         "getpop/commentmeta-wp": "dev-master",
         "getpop/taxonomies-wp": "dev-master",
