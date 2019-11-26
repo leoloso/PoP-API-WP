@@ -23,6 +23,7 @@ addEnvVariablesToConfigFile([
     'DISABLE_CACHE_CONTROL' => false,
     'DEFAULT_CACHE_CONTROL_MAX_AGE' => 3600,
     'DISABLE_GUZZLE_OPERATORS' => false,
+    'DISABLE_USER_STATE_FIELDS_IF_USER_NOT_LOGGED_IN' => false,
 ], [
     // DEV
     'USE_COMPONENT_MODEL_CACHE' => false,
@@ -42,4 +43,5 @@ addEnvVariablesToConfigFile([
     'DISABLE_CACHE_CONTROL' => false,
     'DEFAULT_CACHE_CONTROL_MAX_AGE' => 3600,
     'DISABLE_GUZZLE_OPERATORS' => false,
+    'DISABLE_USER_STATE_FIELDS_IF_USER_NOT_LOGGED_IN' => false,
 ]);
