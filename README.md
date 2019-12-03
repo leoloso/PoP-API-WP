@@ -172,7 +172,7 @@ $ composer create-project leoloso/pop-api-wp
 
 4. Wait for a few minutes ☕️😁
 
-5. Execute `install` again to copy the WordPress must-use plugins under folder `/mu-plugins` (somehow it doesn't do it with `create-project`):
+5. Execute `install` again to copy the WordPress must-use plugins under folder `/mu-plugins` (somehow it doesn't do it with `create-project`). `cd` into the project's folder (by default `"pop-api-wp"`) and execute:
 
 ```bash
 $ composer install
