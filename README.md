@@ -118,7 +118,18 @@ RewriteRule ^api/?$ /?scheme=api [L,P,QSA]
 </IfModule>
 ```
 
-6. ✅ Check that the PoP API works by loading in your site: `/api/?query=__schema` (assuming that pretty permalinks for the API endpoints are enabled, as suggested above)
+6. (Optional) Enable the server to accept external API queries:
+
+```apache
+<IfModule mod_rewrite.c>
+# Enable the server to accept external API queries
+Header set Access-Control-Allow-Methods "OPTIONS, GET, POST"
+Header set Access-Control-Allow-Headers "origin, content-type"
+Header set Access-Control-Allow-Origin "*"
+</IfModule>
+```
+
+7. ✅ Check that the PoP API works by loading in your site: `/api/?query=__schema` (assuming that pretty permalinks for the API endpoints are enabled, as suggested above)
 
 ### Creating a new WordPress site with PoP installed
 

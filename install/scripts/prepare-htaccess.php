@@ -38,6 +38,11 @@ RewriteRule ^api/(graphql|rest)/?$ /?scheme=api&datastructure=$1 [L,P,QSA]
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteRule ^api/?$ /?scheme=api [L,P,QSA]
+
+# Enable the server to accept external API queries
+Header set Access-Control-Allow-Methods "OPTIONS, GET, POST"
+Header set Access-Control-Allow-Headers "origin, content-type"
+Header set Access-Control-Allow-Origin "*"
 </IfModule>
 EOD;
 
