@@ -1,6 +1,6 @@
 # Bootstrap a PoP API for WordPress
 
-Quickly launch a WordPress instance with the PoP API (REST and GraphQL-compatible) installed.
+Quickly launch a WordPress instance with the PoP API, REST and GraphQL installed.
 
 ## Install
 
