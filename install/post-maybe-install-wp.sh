@@ -8,6 +8,6 @@ then
         NC='\033[0m' # No Color
         UNDERLINE=`tput smul`
         NOUNDERLINE=`tput rmul`
-        echo -e "🍎 PoP API: ${ORANGE}${UNDERLINE}$SITE_URL_WITH_HTTP/api/?query=__schema${NOUNDERLINE}${NC}"
+        echo -e "🍎 PoP API: ${ORANGE}${UNDERLINE}$SITE_URL_WITH_HTTP/api/?query=__fullSchema${NOUNDERLINE}${NC}"
     fi
 fi
