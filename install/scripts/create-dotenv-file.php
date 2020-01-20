@@ -25,6 +25,7 @@ addEnvVariablesToConfigFile([
     'DISABLE_GUZZLE_OPERATORS' => false,
     'DISABLE_USER_STATE_FIELDS_IF_USER_NOT_LOGGED_IN' => false,
     'DISABLE_GRAPHQL_API_FOR_POP' => false,
+    'ADD_GLOBAL_FIELDS_TO_SCHEMA' => false,
 ], [
     // DEV
     'USE_COMPONENT_MODEL_CACHE' => false,
@@ -46,4 +47,5 @@ addEnvVariablesToConfigFile([
     'DISABLE_GUZZLE_OPERATORS' => false,
     'DISABLE_USER_STATE_FIELDS_IF_USER_NOT_LOGGED_IN' => false,
     'DISABLE_GRAPHQL_API_FOR_POP' => false,
+    'ADD_GLOBAL_FIELDS_TO_SCHEMA' => false,
 ]);
