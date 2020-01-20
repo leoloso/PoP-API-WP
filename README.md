@@ -129,7 +129,7 @@ Header set Access-Control-Allow-Origin "*"
 </IfModule>
 ```
 
-7. ✅ Check that the PoP API works by loading in your site: `/api/?query=__fullSchema` (assuming that pretty permalinks for the API endpoints are enabled, as suggested above)
+7. ✅ Check that the PoP API works by loading in your site: `/api/?query=fullSchema` (assuming that pretty permalinks for the API endpoints are enabled, as suggested above)
 
 ### Creating a new WordPress site with PoP installed
 
@@ -193,7 +193,7 @@ $ composer install
 
 - 👉 WordPress site: `{YOUR_SITE_URL_WITH_HTTP}`
 - 👉 WordPress admin: `{YOUR_SITE_URL_WITH_HTTP}`/wp/wp-admin/
-- 👉 PoP API: `{YOUR_SITE_URL_WITH_HTTP}/api/?query=__fullSchema`
+- 👉 PoP API: `{YOUR_SITE_URL_WITH_HTTP}/api/?query=fullSchema`
 
 ### Configure application options (optional)
 
