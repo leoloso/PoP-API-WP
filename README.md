@@ -93,8 +93,25 @@ $ composer update
 
 > Note: you will most likely need to wait for a few minutes ☕️😁
 
-<!--
-4. (Suggested) Enable pretty permalinks for the API endpoints (such as `/some-url/api/`): Add the following code in `.htaccess` file (located in your project's root folder) before the WordPress rewrite code (which start with `# BEGIN WordPress`):
+
+4. ✅ Check that the PoP API works by loading in your site: `/api/?query=fullSchema`
+
+**Optionals:**
+
+1. To accept external API queries, add the snippet below in file `.htaccess`:
+
+```apache
+<IfModule mod_rewrite.c>
+# Enable the server to accept external API queries
+Header set Access-Control-Allow-Methods "OPTIONS, GET, POST"
+Header set Access-Control-Allow-Headers "origin, content-type"
+Header set Access-Control-Allow-Origin "*"
+</IfModule>
+```
+
+2. Enable pretty permalinks for the API through the `.htaccess` file
+
+Instead of adding dependency `"leoloso/pop-api-endpoints-for-wp"`, you can add pretty permalinks for the API (such as `/api/graphql`) by adding the following code in the `.htaccess` file (located in your project's root folder) before the WordPress rewrite code (which start with `# BEGIN WordPress`):
 
 ```apache
 # Pretty permalinks for API
@@ -133,23 +150,6 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteRule ^api/?$ /?scheme=api [L,P,QSA]
 </IfModule>
 ```
--->
-
-4. ✅ Check that the PoP API works by loading in your site: `/api/?query=fullSchema`
-
-**Optionals:**
-
-1. To accept external API queries, add the snippet below in file `.htaccess`:
-
-```apache
-<IfModule mod_rewrite.c>
-# Enable the server to accept external API queries
-Header set Access-Control-Allow-Methods "OPTIONS, GET, POST"
-Header set Access-Control-Allow-Headers "origin, content-type"
-Header set Access-Control-Allow-Origin "*"
-</IfModule>
-```
-
 
 ### Creating a new WordPress site with PoP installed
 
