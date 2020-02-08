@@ -139,9 +139,7 @@ RewriteRule ^api/?$ /?scheme=api [L,P,QSA]
 
 **Optionals:**
 
-1. Accept external API queries
-
-Add the snippet below in file `.htaccess` as to enable the server to accept external API queries:
+1. To accept external API queries, add the snippet below in file `.htaccess`:
 
 ```apache
 <IfModule mod_rewrite.c>
@@ -219,9 +217,9 @@ $ composer install
 
 **Optionals:**
 
-1. Configure application options
+1. Configure application options through environment variables. 
 
-PoP can be configured through environment variables. To make it convenient during development, PoP relies on [Symfony's Dotenv component](https://symfony.com/doc/current/components/dotenv.html) to define environment variables through file `config/.env`. You can create or further edit this file, and create additional localized `.env` files (such as `.env.local`, as detailed in the [component's documentation](https://symfony.com/doc/current/components/dotenv.html)).
+PoP relies on [Symfony's Dotenv component](https://symfony.com/doc/current/components/dotenv.html) to define environment variables through file `config/.env`. You can create or further edit this file, and create additional localized `.env` files (such as `.env.local`, as detailed in the [component's documentation](https://symfony.com/doc/current/components/dotenv.html)).
 
 <!--
 ## Installed Components
