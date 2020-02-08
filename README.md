@@ -135,7 +135,7 @@ RewriteRule ^api/?$ /?scheme=api [L,P,QSA]
 ```
 -->
 
-4. ✅ Check that the PoP API works by loading in your site: `/api/?query=fullSchema` (assuming that pretty permalinks for the API endpoints are enabled, as suggested above)
+4. ✅ Check that the PoP API works by loading in your site: `/api/?query=fullSchema`
 
 **Optionals:**
 
