@@ -29,6 +29,7 @@ Via Composer:
 
 2. Add the following packages to the `require` section of your `composer.json` file:
 
+<!--
 _Mandatory:_
 
 ```bash
@@ -50,25 +51,39 @@ _Suggested (to load data from posts, users, comments and taxonomies):_
     ...
     "require": {
         ...
-        "getpop/posts-wp": "dev-master",
-        "getpop/posts-api": "dev-master",
         "getpop/postmeta-wp": "dev-master",
-        "getpop/users-wp": "dev-master",
         "getpop/usermeta-wp": "dev-master",
         "getpop/pages-wp": "dev-master",
         "getpop/postmedia-wp": "dev-master",
-        "getpop/comments-wp": "dev-master",
         "getpop/commentmeta-wp": "dev-master",
-        "getpop/taxonomies-wp": "dev-master",
-        "getpop/taxonomymeta-wp": "dev-master",
         "getpop/taxonomyquery-wp": "dev-master",
         "getpop/graphql": "dev-master",
         "getpop/api-rest": "dev-master",
+        "leoloso/pop-api-endpoints-for-wp": "dev-master"
         ...
     }
     ...
 }
 ```
+-->
+```bash
+{
+    "require": {
+        "getpop/engine-wp": "dev-master",
+        "getpop/postmeta-wp": "dev-master",
+        "getpop/usermeta-wp": "dev-master",
+        "getpop/pages-wp": "dev-master",
+        "getpop/postmedia-wp": "dev-master",
+        "getpop/commentmeta-wp": "dev-master",
+        "getpop/taxonomyquery-wp": "dev-master",
+        "getpop/graphql": "dev-master",
+        "getpop/api-rest": "dev-master",
+        "leoloso/pop-api-endpoints-for-wp": "dev-master"
+    }
+}
+```
+
+> Note: Only package `"getpop/engine-wp"` is mandatory. The other ones are suggested to load data from posts, users, comments and taxonomies, and to add pretty API endpoints
 
 3. Download and install the packages in your project:
 
@@ -76,9 +91,10 @@ _Suggested (to load data from posts, users, comments and taxonomies):_
 $ composer update
 ```
 
-4. Wait for a few minutes ☕️😁
+> Note: you will most likely need to wait for a few minutes ☕️😁
 
-5. (Suggested) Enable pretty permalinks for the API endpoints (such as `/some-url/api/`): Add the following code in `.htaccess` file (located in your project's root folder) before the WordPress rewrite code (which start with `# BEGIN WordPress`):
+<!--
+4. (Suggested) Enable pretty permalinks for the API endpoints (such as `/some-url/api/`): Add the following code in `.htaccess` file (located in your project's root folder) before the WordPress rewrite code (which start with `# BEGIN WordPress`):
 
 ```apache
 # Pretty permalinks for API
@@ -117,8 +133,15 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteRule ^api/?$ /?scheme=api [L,P,QSA]
 </IfModule>
 ```
+-->
 
-6. (Optional) Enable the server to accept external API queries:
+4. ✅ Check that the PoP API works by loading in your site: `/api/?query=fullSchema` (assuming that pretty permalinks for the API endpoints are enabled, as suggested above)
+
+**Optionals:**
+
+1. Accept external API queries
+
+Add the snippet below in file `.htaccess` as to enable the server to accept external API queries:
 
 ```apache
 <IfModule mod_rewrite.c>
@@ -129,7 +152,6 @@ Header set Access-Control-Allow-Origin "*"
 </IfModule>
 ```
 
-7. ✅ Check that the PoP API works by loading in your site: `/api/?query=fullSchema` (assuming that pretty permalinks for the API endpoints are enabled, as suggested above)
 
 ### Creating a new WordPress site with PoP installed
 
@@ -181,24 +203,27 @@ export NONCE_SALT={YOUR_NONCE_SALT}
 $ composer create-project leoloso/pop-api-wp
 ```
 
-4. Wait for a few minutes ☕️😁
+> Note: you will most likely need to wait for a few minutes ☕️😁
 
-5. Execute `install` again to copy the WordPress must-use plugins under folder `/mu-plugins` (somehow it doesn't do it with `create-project`). `cd` into the project's folder (by default `"pop-api-wp"`) and execute:
+4. Execute `install` again to copy the WordPress must-use plugins under folder `/mu-plugins` (somehow it doesn't do it with `create-project`). `cd` into the project's folder (by default `"pop-api-wp"`) and execute:
 
 ```bash
 $ composer install
 ```
 
-6. ✅ The site is installed under:
+5. ✅ The site is installed under:
 
 - 👉 WordPress site: `{YOUR_SITE_URL_WITH_HTTP}`
 - 👉 WordPress admin: `{YOUR_SITE_URL_WITH_HTTP}`/wp/wp-admin/
 - 👉 PoP API: `{YOUR_SITE_URL_WITH_HTTP}/api/?query=fullSchema`
 
-### Configure application options (optional)
+**Optionals:**
+
+1. Configure application options
 
 PoP can be configured through environment variables. To make it convenient during development, PoP relies on [Symfony's Dotenv component](https://symfony.com/doc/current/components/dotenv.html) to define environment variables through file `config/.env`. You can create or further edit this file, and create additional localized `.env` files (such as `.env.local`, as detailed in the [component's documentation](https://symfony.com/doc/current/components/dotenv.html)).
 
+<!--
 ## Installed Components
 
 This bootstrapper will install the following components (for WordPress):
@@ -213,6 +238,7 @@ This bootstrapper will install the following components (for WordPress):
 ## Usage
 
 Refer to [PoP API](https://github.com/getpop/api)
+-->
 
 ## Credits
 
