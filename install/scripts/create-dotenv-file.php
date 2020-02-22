@@ -28,6 +28,8 @@ addEnvVariablesToConfigFile([
     'ADD_GLOBAL_FIELDS_TO_SCHEMA' => false,
     'ADD_SYSTEM_DIRECTIVES_TO_SCHEMA' => false,
     'ADD_EXTENDED_GRAPHQL_DIRECTIVES_TO_SCHEMA' => false,
+    'USER_MUST_BE_LOGGED_IN_TO_TRANSLATE' => false,
+    'ROLE_USER_MUST_HAVE_TO_TRANSLATE' => false,
 ], [
     // DEV
     'USE_COMPONENT_MODEL_CACHE' => false,
@@ -52,4 +54,6 @@ addEnvVariablesToConfigFile([
     'ADD_GLOBAL_FIELDS_TO_SCHEMA' => false,
     'ADD_SYSTEM_DIRECTIVES_TO_SCHEMA' => false,
     'ADD_EXTENDED_GRAPHQL_DIRECTIVES_TO_SCHEMA' => false,
+    'USER_MUST_BE_LOGGED_IN_TO_TRANSLATE' => false,
+    'ROLE_USER_MUST_HAVE_TO_TRANSLATE' => false,
 ]);
