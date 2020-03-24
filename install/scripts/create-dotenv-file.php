@@ -34,6 +34,7 @@ addEnvVariablesToConfigFile([
     'ROLE_USER_MUST_HAVE_TO_TRANSLATE' => false,
     'ENABLE_SEMANTIC_VERSION_CONSTRAINTS' => false,
     'ADD_VERSION_TO_SCHEMA_FIELD_DESCRIPTION' => true,
+    'ENABLE_SCHEMA_ENTITY_REGISTRIES' => false,
 ], [
     // DEV
     'USE_COMPONENT_MODEL_CACHE' => false,
@@ -64,4 +65,5 @@ addEnvVariablesToConfigFile([
     'ROLE_USER_MUST_HAVE_TO_TRANSLATE' => false,
     'ENABLE_SEMANTIC_VERSION_CONSTRAINTS' => false,
     'ADD_VERSION_TO_SCHEMA_FIELD_DESCRIPTION' => true,
+    'ENABLE_SCHEMA_ENTITY_REGISTRIES' => false,
 ]);
