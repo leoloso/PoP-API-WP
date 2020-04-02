@@ -38,6 +38,7 @@ addEnvVariablesToConfigFile([
     'ENABLE_INDIVIDUAL_CONTROL_FOR_PUBLIC_PRIVATE_SCHEMA_MODE' => false,
     'USE_SCHEMA_DEFINITION_CACHE' => false,
     'SEND_TRACES_TO_LOG' => false,
+    'ENABLE_VARIABLES_AS_EXPRESSIONS' => false,
 ], [
     // DEV
     'USE_COMPONENT_MODEL_CACHE' => false,
@@ -72,4 +73,5 @@ addEnvVariablesToConfigFile([
     'ENABLE_INDIVIDUAL_CONTROL_FOR_PUBLIC_PRIVATE_SCHEMA_MODE' => false,
     'USE_SCHEMA_DEFINITION_CACHE' => false,
     'SEND_TRACES_TO_LOG' => true,
+    'ENABLE_VARIABLES_AS_EXPRESSIONS' => false,
 ]);
