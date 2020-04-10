@@ -59,7 +59,7 @@ _Suggested (to load data from posts, users, comments and taxonomies):_
         "getpop/taxonomyquery-wp": "dev-master",
         "getpop/graphql": "dev-master",
         "getpop/api-rest": "dev-master",
-        "leoloso/pop-api-endpoints-for-wp": "dev-master"
+        "getpop/api-endpoints-for-wp": "dev-master"
         ...
     }
     ...
@@ -78,7 +78,7 @@ _Suggested (to load data from posts, users, comments and taxonomies):_
         "getpop/taxonomyquery-wp": "dev-master",
         "getpop/graphql": "dev-master",
         "getpop/api-rest": "dev-master",
-        "leoloso/pop-api-endpoints-for-wp": "dev-master"
+        "getpop/api-endpoints-for-wp": "dev-master"
     }
 }
 ```
@@ -111,7 +111,7 @@ Header set Access-Control-Allow-Origin "*"
 
 2. Enable pretty permalinks for the API through the `.htaccess` file
 
-Instead of adding dependency `"leoloso/pop-api-endpoints-for-wp"`, you can add pretty permalinks for the API endpoints (such as `/api/graphql`) by adding the following code in the `.htaccess` file (before the WordPress rewrite code, which starts with `# BEGIN WordPress`):
+Instead of adding dependency `"getpop/api-endpoints-for-wp"`, you can add pretty permalinks for the API endpoints (such as `/api/graphql`) by adding the following code in the `.htaccess` file (before the WordPress rewrite code, which starts with `# BEGIN WordPress`):
 
 ```apache
 # Pretty permalinks for API
