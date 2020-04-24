@@ -40,6 +40,7 @@ addEnvVariablesToConfigFile([
     'SEND_TRACES_TO_LOG' => false,
     'ENABLE_VARIABLES_AS_EXPRESSIONS' => false,
     'ADD_SELF_FIELD_FOR_ROOT_TYPE_TO_SCHEMA' => false,
+    'SHOW_TRACES_IN_RESPONSE' => false,
 ], [
     // DEV
     'USE_COMPONENT_MODEL_CACHE' => false,
@@ -76,4 +77,5 @@ addEnvVariablesToConfigFile([
     'SEND_TRACES_TO_LOG' => true,
     'ENABLE_VARIABLES_AS_EXPRESSIONS' => false,
     'ADD_SELF_FIELD_FOR_ROOT_TYPE_TO_SCHEMA' => false,
+    'SHOW_TRACES_IN_RESPONSE' => true,
 ]);
