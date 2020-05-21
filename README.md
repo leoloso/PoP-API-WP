@@ -80,8 +80,9 @@ $ composer update
 
 > Note: you will most likely need to wait for a few minutes ☕️😁
 
+5. Flush permalinks, by going to the admin panel, `Settings` => `Permalinks` and click on the `Save changes` button.
 
-5. ✅ Check that the PoP API works by loading in your site: `/api/?query=fullSchema`
+6. ✅ Check that the PoP API works by loading in your site: `/api/?query=fullSchema`
 
 **Optionals:**
 
@@ -98,7 +99,7 @@ Header set Access-Control-Allow-Origin "*"
 
 2. Enable pretty permalinks for the API through the `.htaccess` file
 
-Instead of adding dependency `"getpop/api-endpoints-for-wp"`, you can add pretty permalinks for the API endpoints (such as `/api/graphql`) by adding the following code in the `.htaccess` file (before the WordPress rewrite code, which starts with `# BEGIN WordPress`):
+Instead of adding dependency `"getpop/api-endpoints-for-wp"` and having to flush the permalinks, you can add pretty permalinks for the API endpoints (such as `/api/graphql`) by adding the following code in the `.htaccess` file (before the WordPress rewrite code, which starts with `# BEGIN WordPress`):
 
 ```apache
 # Pretty permalinks for API
