@@ -80,7 +80,11 @@ $ composer update
 
 > Note: you will most likely need to wait for a few minutes ☕️😁
 
-5. Flush permalinks, by going to the admin panel, `Settings` => `Permalinks` and click on the `Save changes` button.
+5. Flush the re-write rules to enable the API endpoint:
+
+- Log-in to the WordPress admin
+- Go to `Settings => Permalinks`
+- Click on the "Save Changes" button (no need to modify any input)
 
 6. ✅ Check that the PoP API works by loading in your site: `/api/?query=fullSchema`
 
@@ -197,7 +201,11 @@ $ composer create-project leoloso/pop-api-wp
 $ composer install
 ```
 
-5. Flush permalinks, by going to the admin panel, `Settings` => `Permalinks` and click on the `Save changes` button.
+5. Flush the re-write rules to enable the API endpoint:
+
+- Log-in to the WordPress admin
+- Go to `Settings => Permalinks`
+- Click on the "Save Changes" button (no need to modify any input)
 
 6. ✅ The site is installed under:
 
