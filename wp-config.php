@@ -21,6 +21,21 @@
 // Load Composer’s autoloader
 require_once (__DIR__.'/vendor/autoload.php');
 
+// Initialize all PoP components
+$componentClasses = [
+    \PoP\CommentMetaWP\Component::class,
+    \PoP\PagesWP\Component::class,
+    \PoP\PostMetaWP\Component::class,
+    \PoP\PostMediaWP\Component::class,
+    \PoP\TaxonomyQueryWP\Component::class,
+    \PoP\UserMetaWP\Component::class,
+    \PoP\GraphQL\Component::class,
+    \PoP\RESTAPI\Component::class,
+];
+foreach ($componentClasses as $componentClass) {
+    $componentClass::initialize();
+}
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define( 'DB_NAME', 'database_name_here' );
