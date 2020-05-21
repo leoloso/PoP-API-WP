@@ -31,6 +31,7 @@ $componentClasses = [
     \PoP\UserMetaWP\Component::class,
     \PoP\GraphQL\Component::class,
     \PoP\RESTAPI\Component::class,
+    \PoP\APIEndpointsForWP\Component::class,
 ];
 foreach ($componentClasses as $componentClass) {
     $componentClass::initialize();

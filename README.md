@@ -29,63 +29,50 @@ Via Composer:
 
 2. Add the following packages to the `require` section of your `composer.json` file:
 
-<!--
-_Mandatory:_
 
 ```bash
 {
-    ...
     "require": {
-        ...
-        "getpop/engine-wp": "dev-master",
-        ...
-    }
-    ...
-}
-```
-
-_Suggested (to load data from posts, users, comments and taxonomies):_
-
-```bash
-{
-    ...
-    "require": {
-        ...
-        "getpop/postmeta-wp": "dev-master",
-        "getpop/usermeta-wp": "dev-master",
-        "getpop/pages-wp": "dev-master",
-        "getpop/postmedia-wp": "dev-master",
         "getpop/commentmeta-wp": "dev-master",
+        "getpop/pages-wp": "dev-master",
+        "getpop/postmeta-wp": "dev-master",
         "getpop/taxonomyquery-wp": "dev-master",
+        "getpop/usermeta-wp": "dev-master",
+        "getpop/postmedia-wp": "dev-master",
         "getpop/graphql": "dev-master",
         "getpop/api-rest": "dev-master",
-        "getpop/api-endpoints-for-wp": "dev-master"
-        ...
-    }
-    ...
-}
-```
--->
-```bash
-{
-    "require": {
-        "getpop/engine-wp": "dev-master",
-        "getpop/postmeta-wp": "dev-master",
-        "getpop/usermeta-wp": "dev-master",
-        "getpop/pages-wp": "dev-master",
-        "getpop/postmedia-wp": "dev-master",
-        "getpop/commentmeta-wp": "dev-master",
-        "getpop/taxonomyquery-wp": "dev-master",
-        "getpop/graphql": "dev-master",
-        "getpop/api-rest": "dev-master",
-        "getpop/api-endpoints-for-wp": "dev-master"
+        "getpop/api-endpoints-for-wp": "dev-master",
+        "getpop/engine-wp-bootloader": "dev-master",
     }
 }
 ```
 
-> Note: Only package `"getpop/engine-wp"` is mandatory. The other ones are suggested to load data from posts, users, comments and taxonomies, and to add pretty API endpoints
+3. Add the following code at the beginning of `wp-config.php`:
 
-3. Download and install the packages in your project:
+```php
+// Load Composer’s autoloader
+require_once (__DIR__.'/vendor/autoload.php');
+
+// Initialize all PoP components
+$componentClasses = [
+    \PoP\CommentMetaWP\Component::class,
+    \PoP\PagesWP\Component::class,
+    \PoP\PostMetaWP\Component::class,
+    \PoP\PostMediaWP\Component::class,
+    \PoP\TaxonomyQueryWP\Component::class,
+    \PoP\UserMetaWP\Component::class,
+    \PoP\GraphQL\Component::class,
+    \PoP\RESTAPI\Component::class,
+    \PoP\APIEndpointsForWP\Component::class,
+];
+foreach ($componentClasses as $componentClass) {
+    $componentClass::initialize();
+}
+```
+
+<!-- > Note: Only package `"getpop/engine-wp"` is mandatory. The other ones are suggested to load data from posts, users, comments and taxonomies, and to add pretty API endpoints -->
+
+4. Download and install the packages in your project:
 
 ```bash
 $ composer update
@@ -94,7 +81,7 @@ $ composer update
 > Note: you will most likely need to wait for a few minutes ☕️😁
 
 
-4. ✅ Check that the PoP API works by loading in your site: `/api/?query=fullSchema`
+5. ✅ Check that the PoP API works by loading in your site: `/api/?query=fullSchema`
 
 **Optionals:**
 
