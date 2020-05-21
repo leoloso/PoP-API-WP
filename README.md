@@ -197,7 +197,9 @@ $ composer create-project leoloso/pop-api-wp
 $ composer install
 ```
 
-5. ✅ The site is installed under:
+5. Flush permalinks, by going to the admin panel, `Settings` => `Permalinks` and click on the `Save changes` button.
+
+6. ✅ The site is installed under:
 
 - 👉 WordPress site: `{YOUR_SITE_URL_WITH_HTTP}`
 - 👉 WordPress admin: `{YOUR_SITE_URL_WITH_HTTP}`/wp/wp-admin/
